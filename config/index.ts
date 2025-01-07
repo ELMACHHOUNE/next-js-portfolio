@@ -8,7 +8,7 @@ export const links = {
 
 export const siteConfig: Metadata = {
   title: `${links.ownerName}`,
-  description: "Modern & Minimalist Next.js Portfolio.",
+  description: "Mohamed El Machhoune's Modern & Minimalist Portfolio showcasing expertise in Full-Stack Development with the MERN stack, UX/UI Design, Instruction, and Consulting.",
   keywords: [
     "reactjs",
     "nextjs",
@@ -51,6 +51,6 @@ export const siteConfig: Metadata = {
   ] as Array<string>,
   authors: {
     name: links.ownerName,
-    url: "https://github.com/sanidhyy",
+    url: "https://github.com/ELMACHHOUNE/",
   },
 } as const;
