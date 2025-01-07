@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Mohamed EL MACHHOUNE",
+    "email": "business.elmachhoune@gmail.com",
+    "url": "https://www.elmachhoune.me/"
   },
-  "description": "Modern & Minimalist Next.js Portfolio.",
+  "description": "Mohamed El Machhoune's Modern & Minimalist Portfolio showcasing expertise in Full-Stack Development with the MERN stack, UX/UI Design, Instruction, and Consulting.",
   "keywords": [
     "reactjs",
     "nextjs",
@@ -57,21 +57,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/next-portfolio.git"
+    "url": "https://github.com/ELMACHHOUNE/next-js-portfolio"
   },
-  "homepage": "https://github.com/sanidhyy/next-portfolio#readme",
+  "homepage": "https://github.com/ELMACHHOUNE/",
   "bugs": {
-    "url": "https://github.com/sanidhyy/next-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://www.elmachhoune.me/",
+    "email": "business.elmachhoune@gmail.com"
   },
   "funding": [
     {
       "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
+      "url": "https://www.elmachhoune.me/"
     },
     {
       "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
+      "url": "https://www.elmachhoune.me/"
     }
   ],
   "dependencies": {
