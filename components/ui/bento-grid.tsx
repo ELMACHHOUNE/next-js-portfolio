@@ -1,10 +1,9 @@
-"use client";
+"use client"; // This ensures the component is rendered on the client side
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
-
 import { links } from "@/config";
 import { techStack } from "@/data";
 import animationData from "@/data/confetti.json";
@@ -12,9 +11,9 @@ import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { MagicButton } from "./magic-button";
-
 import { GridGlobe } from "../grid-globe";
 
+// BentoGrid Component
 export const BentoGrid = ({
   className,
   children,
@@ -34,6 +33,7 @@ export const BentoGrid = ({
   );
 };
 
+// BentoGridItem Component
 export const BentoGridItem = ({
   id,
   className,
@@ -55,11 +55,15 @@ export const BentoGridItem = ({
 }) => {
   const [copied, setCopied] = useState(false);
 
+  // Handle the "Copy" button click
   const handleCopy = () => {
-    navigator.clipboard.writeText(links.ownerEmail);
-    setCopied(true);
+    if (typeof window !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(links.ownerEmail); // Ensure links.ownerEmail is available
+      setCopied(true);
+    }
   };
 
+  // Automatically reset "copied" state after 3.5 seconds
   useEffect(() => {
     if (!copied) return;
 
@@ -78,7 +82,7 @@ export const BentoGridItem = ({
       )}
       style={{
         background: "rgb(4,7,29)",
-        backgroundColor:
+        backgroundImage:
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
@@ -89,7 +93,7 @@ export const BentoGridItem = ({
               width={689}
               height={541}
               src={img}
-              alt={img}
+              alt="Image"
               className={cn("object-cover object-center", imgClassName)}
             />
           )}
@@ -106,7 +110,7 @@ export const BentoGridItem = ({
               width={208}
               height={96}
               src={spareImg}
-              alt={spareImg}
+              alt="Spare Image"
               className="h-full w-full object-cover object-center"
             />
           )}
