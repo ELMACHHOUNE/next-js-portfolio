@@ -216,7 +216,7 @@ export const socialMedia = [
   {
     name: "LinkedIn",
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/mohamed.elmachhoune",
+    link: "https://www.linkedin.com/in/mohamed-el-machhoune",
   },
 ] as const;
 
