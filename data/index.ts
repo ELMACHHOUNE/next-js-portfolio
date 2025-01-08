@@ -51,7 +51,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "MERN Stack Developer, Graphic Designer, Instructor & Consultant",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -74,21 +74,21 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "FigPro - Collaborative Design Tool",
-    des: "A collaborative design tool with real-time collaboration, vector editing, and a responsive UI.",
+    title: "Quiz-Liouaeddine Platform",
+    des: "A quiz platform for university students to master Microeconomics and other topics.",
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://clone-figmaa.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/figma-clone",
+    link: "https://quiz-liouaeddine.ma",
+    sourceCode: "https://github.com/ELMACHHOUNE",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "GoToDev Digital Solutions",
+    des: "A platform offering web, mobile app development, UX/UI design, and more.",
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://clone-yoom.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/zoom-clone",
+    link: "https://gotodev.ma",
+    sourceCode: "https://github.com/ELMACHHOUNE",
   },
   {
     id: 3,
