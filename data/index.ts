@@ -206,17 +206,17 @@ export const socialMedia = [
   {
     name: "GitHub",
     img: "/git.svg",
-    link: "https://github.com/sanidhyy",
+    link: "https://github.com/ELMACHHOUNE",
   },
   {
-    name: "Twitter",
-    img: "/twit.svg",
-    link: "https://twitter.com/TechnicalShubam",
+    name: "Facebook",
+    img: "/face.svg",
+    link: "https://web.facebook.com/m.elmachhoune/",
   },
   {
     name: "LinkedIn",
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/sanidhyy",
+    link: "https://www.linkedin.com/in/mohamed.elmachhoune",
   },
 ] as const;
 
