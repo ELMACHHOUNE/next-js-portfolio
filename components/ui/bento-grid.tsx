@@ -1,19 +1,28 @@
-"use client"; // This ensures the component is rendered on the client side
+"use client"; // Ensure the component is client-side
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
 import { links } from "@/config";
 import { techStack } from "@/data";
-import animationData from "@/data/confetti.json";
 import { cn } from "@/lib/utils";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
-import { BackgroundGradientAnimation } from "./background-gradient-animation";
-import { MagicButton } from "./magic-button";
-import { GridGlobe } from "../grid-globe";
+// Dynamically import other components
+const BackgroundGradientAnimation = dynamic(
+  () => import("./background-gradient-animation").then((mod) => mod.BackgroundGradientAnimation),
+  { ssr: false }
+);
+const MagicButton = dynamic(
+  () => import("./magic-button").then((mod) => mod.MagicButton),
+  { ssr: false }
+);
+const GridGlobe = dynamic(
+  () => import("../grid-globe").then((mod) => mod.GridGlobe),
+  { ssr: false }
+);
 
-// BentoGrid Component
 export const BentoGrid = ({
   className,
   children,
@@ -33,7 +42,6 @@ export const BentoGrid = ({
   );
 };
 
-// BentoGridItem Component
 export const BentoGridItem = ({
   id,
   className,
@@ -54,24 +62,30 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+  const [animationData, setAnimationData] = useState(null);
 
-  // Handle the "Copy" button click
+  // Dynamically load the animation data
+  useEffect(() => {
+    async function loadAnimationData() {
+      const animation = await import("@/data/confetti.json");
+      setAnimationData(animation.default);
+    }
+    loadAnimationData();
+  }, []);
+
   const handleCopy = () => {
-    if (typeof window !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(links.ownerEmail); // Ensure links.ownerEmail is available
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(links.ownerEmail);
       setCopied(true);
     }
   };
 
-  // Automatically reset "copied" state after 3.5 seconds
+  // Reset copied state after 3.5 seconds
   useEffect(() => {
     if (!copied) return;
 
-    const copyTimeout = setTimeout(() => {
-      setCopied(false);
-    }, 3500);
-
-    return () => clearTimeout(copyTimeout);
+    const timeout = setTimeout(() => setCopied(false), 3500);
+    return () => clearTimeout(timeout);
   }, [copied]);
 
   return (
@@ -134,52 +148,18 @@ export const BentoGridItem = ({
 
           {id === 2 && <GridGlobe />}
 
-          {id === 3 && (
-            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
-              <div className="flex flex-col gap-3 lg:gap-8">
-                {techStack.stack1.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg bg-[#10132e] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-
-                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
-              </div>
-
-              <div className="flex flex-col gap-3 lg:gap-8">
-                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
-                {techStack.stack2.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg bg-[#10132e] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
           {id === 6 && (
             <div className="group relative mt-5">
-              <button
-                tabIndex={-1}
-                className="pointer-events-none absolute -bottom-5 right-0 cursor-default"
-              >
+              {animationData ? (
                 <Lottie
-                  options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: "xMidYMid slice",
-                    },
-                  }}
+                  animationData={animationData}
+                  loop={copied}
+                  autoplay={copied}
+                  style={{ width: "200px", height: "200px" }}
                 />
-              </button>
+              ) : (
+                <p>Loading animation...</p>
+              )}
 
               <MagicButton
                 title={copied ? "Email copied!" : "Copy my email"}
