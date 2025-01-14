@@ -141,64 +141,89 @@ export const testimonials = [
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "mrtechnologies",
+    nameImg: "/mrtechnologies.webp",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "uit",
+    nameImg: "/uit.png",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "paylik",
+    nameImg: "/paylik.webp",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "gotodev",
+    nameImg: "/gotodev2.png",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "ecoimpact",
+    nameImg: "/ecoimpact.svg",
+  },
+  {
+    id: 10,
+    name: "gk",
+    nameImg: "/gk.png",
+  },
+  {
+    id: 6,
+    name: "quiz",
+    nameImg: "/quiz.webp",
+  },
+  {
+    id: 7,
+    name: "sbai",
+    nameImg: "/msbai.svg",
+  },
+  {
+    id: 8,
+    name: "touzar",
+    nameImg: "/touzar.webp",
+  },
+  {
+    id: 9,
+    name: "elam",
+    nameImg: "/elam.png",
+  },
+  {
+    id: 11,
+    name: "vic",
+    nameImg: "/vic.png",
   },
 ] as const;
 
 export const workExperience = [
   {
     id: 1,
-    title: "Full stack instructor at GoMyCode",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Full-stack Developer at IR4LAB (Anapec Contract)",
+    desc: "Contributed to innovative projects as a Full-stack Developer at IR4LAB from August 2023 to November 2023, leveraging modern technologies in a hybrid work setup to deliver impactful solutions.",
+    className: "md:col-span-2",
+    thumbnail: "/IR4LAB.png",
+  },
+  {
+    id: 2,
+    title: "UX/UI & Graphic Design instructor at GoMyCode (Freelance)",
+    desc: "Thrilled to join GoMyCode as a part-time instructor, teaching Graphic Design & UX/UI Design since July 2023.",
+    className: "md:col-span-2", 
+    thumbnail: "/gmc.jpg",
+  },
+  {
+    id: 3,
+    title: "Full Stack Web instructor at GoMyCode (Freelance)",
+    desc: "Thrilled to join GoMyCode as a part-time Web Development instructor, teaching the MERN Stack since August 2023.",
     className: "md:col-span-2",
     thumbnail: "/gmc.jpg",
   },
   {
-    id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp3.svg",
-  },
-  {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
+    title: "MERN Stack Trainer (Consultation - Freelance)",
+    desc: "Delivered a 6-day MERN Stack training to 34+ students at HoussniJob Innovation from May 2024 to June 2024, collaborating with higher education institutions to enhance tech skills.",
+    className: "md:col-span-2", 
+    thumbnail: "/houssnijob.png",
   },
 ] as const;
 
