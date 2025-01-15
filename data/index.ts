@@ -132,7 +132,7 @@ export const testimonials = [
   {
     quote: `${links.ownerName}’s ability to seamlessly combine technical expertise, marketing strategies, and outstanding design is nothing short of remarkable. His charisma and vision inspire confidence, and he always finds innovative ways to bring value to both the team and our clients.`,
     name: "Reda EL MACHHOUNE",
-    title: "English Teacher & Digital Marketer",
+    title: "Teacher of English & Digital Marketer",
     profileImg: "/reda.jpg",
   },
   {
