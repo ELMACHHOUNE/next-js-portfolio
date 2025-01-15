@@ -112,8 +112,8 @@ export const InfiniteMovingCards = ({
                   <Image
                     height={50}
                     width={50}
-                    src="/profile.svg"
-                    alt="profile"
+                    src={item.profileImg}
+                    alt={`${item.name} profile`}
                   />
                 </div>
 
