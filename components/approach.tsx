@@ -10,14 +10,14 @@ export const Approach = () => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
-        My <span className="text-purple">approach</span>
+        My <span className="text-purple">expertise</span>
       </h1>
 
       <div className="my-20 flex flex-col items-center justify-center gap-4 lg:flex-row">
         <Card
-          title="Planning & Strategy"
-          icon={<MagicButton title="Phase 1" asChild />}
-          description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements."
+          title="UX/UI & Graphic Designer"
+          icon={<MagicButton title="UX/UI & Graphic Designer" asChild />}
+          description="I design intuitive and visually appealing user interfaces that create memorable user experiences, ensuring every pixel serves a purpose."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -26,9 +26,9 @@ export const Approach = () => {
         </Card>
 
         <Card
-          title="Deployment & Progress Update"
-          icon={<MagicButton title="Phase 2" asChild />}
-          description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
+          title="Full-stack Web Developer"
+          icon={<MagicButton title="Full-stack Web Developer" asChild />}
+          description="I build scalable, secure, and modern web applications using cutting-edge technologies, delivering robust solutions tailored to your needs."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -42,9 +42,9 @@ export const Approach = () => {
         </Card>
 
         <Card
-          title="Development & Launch"
-          icon={<MagicButton title="Phase 3" asChild />}
-          description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up."
+          title="Consulting & Instructor"
+          icon={<MagicButton title="Consulting & Instructor" asChild />}
+          description="I provide expert guidance and personalized training to empower teams and individuals, sharing my knowledge as an instructor and consultant."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -95,12 +95,12 @@ const Card = ({ title, description, icon, children }: CardProps) => {
           {icon}
         </div>
 
-        <h2 className="relative z-10 mt-4 text-3xl font-bold text-black opacity-0 transition  duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white">
+        <h2 className="relative z-10 mt-4 text-3xl font-bold text-black opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white">
           {title}
         </h2>
 
         <p
-          className="relative z-10 mt-4 text-sm font-bold text-black opacity-0 transition  duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white"
+          className="relative z-10 mt-4 text-sm font-bold text-black opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white"
           style={{
             color: "#e4ecff",
           }}

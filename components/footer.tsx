@@ -47,19 +47,17 @@ export const Footer = () => {
 
       <div className="relative z-[999] mt-16 flex flex-col items-center justify-between md:flex-row">
         <p className="text-sm font-light md:text-base md:font-normal">
-          Copyright &copy; {new Date().getFullYear()}{" "}
+          Copyright &copy; {new Date().getFullYear()}{" "}|{" "}
           <Link
             href="https://elmachhoune.me"
             target="_blank"
             rel="noreferrer noopener"
             className="text-purple"
           >
-            EL MACHHOUNE
+           MOHAMED EL MACHHOUNE
           </Link>{" "}
           |{" "}
-          <Link href={links.sourceCode} className="underline">
-            Source Code
-          </Link>
+  
         </p>
 
         <div className="flex items-center gap-6 md:gap-3">
