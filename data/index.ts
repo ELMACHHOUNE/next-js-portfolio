@@ -112,6 +112,12 @@ export const projects = [
 
 export const testimonials = [
   {
+    quote: `Working with ${links.ownerName} has been nothing short of inspiring. His ability to blend technical brilliance with creative design and strategic thinking makes him a rare gem in our industry. He’s not just a teammate—he’s a mentor to us all.`,
+    name: "Yassine ELMOUSS",
+    title: "Software Developer",
+    profileImg: "/yassine.webp",
+  },
+  {
     quote: `${links.ownerName}’s versatility is unparalleled. Whether it's crafting seamless user experiences, building robust applications, or pitching ideas to clients, he excels in every role. He inspires the team to push boundaries and achieve greatness.`,
     name: "Issam EL JAOUHARI",
     title: "Mobile & Full-stack Web Developer",
@@ -122,12 +128,6 @@ export const testimonials = [
     name: "Azeddine Ait TAAKAT",
     title: "ISTQB & Full-stack Web Developer",
     profileImg: "/azeddine.jpg",
-  },
-  {
-    quote: `Working with ${links.ownerName} has been nothing short of inspiring. His ability to blend technical brilliance with creative design and strategic thinking makes him a rare gem in our industry. He’s not just a teammate—he’s a mentor to us all.`,
-    name: "Yassine ELMOUSS",
-    title: "Software Developer",
-    profileImg: "/issam.jpg",
   },
   {
     quote: `${links.ownerName}’s ability to seamlessly combine technical expertise, marketing strategies, and outstanding design is nothing short of remarkable. His charisma and vision inspire confidence, and he always finds innovative ways to bring value to both the team and our clients.`,
