@@ -199,6 +199,11 @@ export const companies = [
     name: "vic",
     nameImg: "/vic.png",
   },
+  {
+    id: 12,
+    name: "houssnijob",
+    nameImg: "/houssnijob.png",
+  },
 ] as const;
 
 export const workExperience = [
