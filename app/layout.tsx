@@ -27,6 +27,7 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
         <link rel="icon" href="/icon.png" />
         <link rel="canonical" href="https://www.elmachhoune.me/" />
         <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="qxvD8indgJ2C-TyDsWeAiiJSEX7fmf_Pw2C-4kcDGYQ" />
         {/* Structured Data */}
         <script
           type="application/ld+json"
