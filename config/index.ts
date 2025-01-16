@@ -92,7 +92,7 @@ export const siteConfig: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${links.ownerName}`,
-    description: `Explore Mohamed El Machhoune's portfolio featuring full-stack projects, designs, and consultation expertise.`,
+    description: `Explore Mohamed EL MACHHOUNE's portfolio featuring full-stack projects, designs, and consultation expertise.`,
     images: ["/icon.png"],
   },
   metadataBase: new URL("https://www.elmachhoune.me"),
