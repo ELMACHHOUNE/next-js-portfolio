@@ -177,7 +177,7 @@ export const companies = [
   {
     id: 6,
     name: "quiz",
-    nameImg: "/quiz.webp",
+    nameImg: "/quiz.png",
   },
   {
     id: 7,
