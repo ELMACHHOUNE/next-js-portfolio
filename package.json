@@ -131,5 +131,11 @@
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.9.2"
+  },
+  "overrides": {
+    "esbuild": "^0.24.4",
+    "path-to-regexp": "^6.3.0",
+    "semver": "^7.6.3",
+    "@babel/runtime": "^7.26.10"
   }
 }

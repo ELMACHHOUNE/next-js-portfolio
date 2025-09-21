@@ -18,12 +18,17 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = siteConfig;
 
-const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="dark"
+      style={{ colorScheme: "dark" }}
+    >
       <head>
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/icon.png" />
         <link rel="canonical" href="https://www.elmachhoune.me/" />
         <meta name="robots" content="index, follow" />
@@ -48,14 +53,12 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
           }}
         ></script>
       </head>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
+      <body className={inter.className} suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
           {children}
           <Analytics />
         </ThemeProvider>
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}
