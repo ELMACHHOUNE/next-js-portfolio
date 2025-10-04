@@ -230,11 +230,44 @@ export const workExperience = [
   },
   {
     id: 4,
-    title: "MERN Stack Trainer (Consultation - Freelance)",
-    desc: "Delivered a 6-day MERN Stack training to 34+ students at HoussniJob Innovation from May 2024 to June 2024, collaborating with higher education institutions to enhance tech skills.",
-    className: "md:col-span-2", 
+    title:  "Full stack web instructor at HoussniJob Innovation (Freelance)",
+    desc: [
+      "May–June 2024 (6 days): Trained 34+ second-year students from EFET Casablanca and EURELEC Casablanca in MERN Stack development.",
+      "March 3–26, 2025 (11 days): Delivered advanced MERN Stack workshops for EFET and EURELEC students in partnership with HoussniJob Innovation and the Tamheen program by GIZ.",
+      "May 5–26, 2025 (4 days): Provided MERN Stack instruction to students from OMNIA School, focusing on practical frontend and backend development skills.",
+    ],
+    className: "md:col-span-2",
     thumbnail: "/houssnijob.png",
   },
+  
+  {
+    id: 5,
+    title: "Technical Assistant in Web Development at Jadara Foundation (Freelance)",
+    desc: [
+      "Sep – Dec 2025: Technical Assistant for the 'GON Wings Tech School' project with Jadara Foundation.",
+      "Guided students on the ALX platform in Full Stack Web Development.",
+      "Provided support in frontend and backend development.",
+    ],
+    className: "md:col-span-2", 
+    thumbnail: "/jadara.png",
+  },
+  
+  {
+    id: 6,
+    title: "AI Instructor at HoussniJob Innovation (Freelance)",
+    desc: [
+      "Sep 22 – Oct 9, 2025 (CTPES Casablanca): Delivered an AI training program with HoussniJob Innovation under the GIZ program.",
+      "Guided students in workflow automation using n8n and API integrations.",
+      "Taught prompt engineering and AI agent automation techniques.",
+      "Mentored participants on applying AI tools to real-world projects.",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/houssnijob.png",
+  },
+  
+  
+  
+  
 ] as const;
 
 export const socialMedia = [
@@ -252,6 +285,11 @@ export const socialMedia = [
     name: "LinkedIn",
     img: "/link.svg",
     link: "https://www.linkedin.com/in/mohamed-el-machhoune",
+  },
+  {
+    name: "Whatsapp",
+    img: "/whatsapp.svg",
+    link: "https://wa.me/+212649455082",
   },
 ] as const;
 

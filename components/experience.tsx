@@ -31,9 +31,18 @@ export const Experience = () => {
                 <h1 className="text-start text-xl font-bold md:text-2xl">
                   {experience.title}
                 </h1>
-                <p className="mt-3 text-start font-semibold text-white-100">
-                  {experience.desc}
-                </p>
+
+                <div className="mt-3 text-start font-semibold text-white-100">
+                  {Array.isArray(experience.desc) ? (
+                    <ul className="list-disc ps-5 space-y-2">
+                      {experience.desc.map((point, index) => (
+                        <li key={index}>{point}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>{experience.desc}</p>
+                  )}
+                </div>
               </div>
             </div>
           </Button>
