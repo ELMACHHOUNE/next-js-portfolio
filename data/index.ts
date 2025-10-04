@@ -74,12 +74,12 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Quiz-Liouaeddine Platform",
+    title: "Quiz-GoToDev Platform",
     des: "A quiz platform for university students to master Microeconomics and other topics.",
     img: "/quiz_website.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://quiz-liouaeddine.ma",
-    sourceCode: "https://quiz-liouaeddine.ma",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/next.svg"],
+    link: "https://www.quiz-gotodev.tech/",
+    sourceCode: "https://www.quiz-gotodev.tech/",
   },
   {
     id: 2,
