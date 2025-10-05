@@ -258,7 +258,7 @@ export const workExperience = [
       "Program accredited by Woolf and internationally recognized (MFHEA Level 7 – 90 ECTS).",
     ],
     className: "md:col-span-2",
-    thumbnail: "/gmc-woolf.jpg",
+    thumbnail: "/gmc.png",
   },
   
   {
