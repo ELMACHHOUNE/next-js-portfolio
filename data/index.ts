@@ -112,12 +112,6 @@ export const projects = [
 
 export const testimonials = [
   {
-    quote: `Working with ${links.ownerName} has been nothing short of inspiring. His ability to blend technical brilliance with creative design and strategic thinking makes him a rare gem in our industry. He’s not just a teammate—he’s a mentor to us all.`,
-    name: "Yassine ELMOUSS",
-    title: "Software Developer",
-    profileImg: "/yassine.webp",
-  },
-  {
     quote: `${links.ownerName}’s versatility is unparalleled. Whether it's crafting seamless user experiences, building robust applications, or pitching ideas to clients, he excels in every role. He inspires the team to push boundaries and achieve greatness.`,
     name: "Issam EL JAOUHARI",
     title: "Mobile & Full-stack Web Developer",
@@ -170,19 +164,14 @@ export const companies = [
     nameImg: "/ecoimpact.svg",
   },
   {
-    id: 10,
-    name: "gk",
-    nameImg: "/gk.png",
-  },
-  {
     id: 6,
     name: "quiz",
     nameImg: "/quiz.png",
   },
   {
     id: 7,
-    name: "sbai",
-    nameImg: "/msbai.svg",
+    name: "gk",
+    nameImg: "/gk.png",
   },
   {
     id: 8,
@@ -191,19 +180,41 @@ export const companies = [
   },
   {
     id: 9,
-    name: "elam",
-    nameImg: "/elam.png",
-  },
-  {
-    id: 11,
     name: "vic",
     nameImg: "/vic.png",
   },
   {
-    id: 12,
+    id: 10,
     name: "houssnijob",
     nameImg: "/houssnijob.png",
   },
+  {
+    id: 11,
+    name: "GMC school of technology",
+    nameImg: "/gmc.png",
+  },
+  {
+    id: 12,
+    name: "Jadara",
+    nameImg: "/jadara.png",
+  },
+  {
+    id: 13,
+    name: "GoMyCode",
+    nameImg: "/gmc.jpg",
+  },
+  {
+    id: 14,
+    name: "Aksam assurance",
+    nameImg: "/aksam.png",
+  },
+  {
+    id: 15,
+    name: "nlivrilik",
+    nameImg: "/nlivrilik.png",
+  },
+ 
+
 ] as const;
 
 export const workExperience = [
@@ -239,27 +250,35 @@ export const workExperience = [
     className: "md:col-span-2",
     thumbnail: "/houssnijob.png",
   },
-  
   {
     id: 5,
+    title: "Instructor – MSc in Software Engineering at GoMyCode School of Technology (Freelance)",
+    desc: [
+      "Jan 2025 – Present (Remote, Morocco): Instructor in the 18-month MSc Software Engineering program.",
+      "Program accredited by Woolf and internationally recognized (MFHEA Level 7 – 90 ECTS).",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/gmc-woolf.jpg",
+  },
+  
+  {
+    id: 6,
     title: "Technical Assistant in Web Development at Jadara Foundation (Freelance)",
     desc: [
-      "Sep – Dec 2025: Technical Assistant for the 'GON Wings Tech School' project with Jadara Foundation.",
-      "Guided students on the ALX platform in Full Stack Web Development.",
-      "Provided support in frontend and backend development.",
+      "Sep – Dec 2025: Assisted the 'GON Wings Tech School' project within Jadara Foundation’s Second Chance Schools program.",
+      "Delivered remote Full Stack Web Development training (frontend & backend) via the ALX platform for NEET youth in Guelmim-Oued Noun.",
     ],
     className: "md:col-span-2", 
     thumbnail: "/jadara.png",
   },
   
+  
   {
-    id: 6,
+    id: 7,
     title: "AI Instructor at HoussniJob Innovation (Freelance)",
     desc: [
       "Sep 22 – Oct 9, 2025 (CTPES Casablanca): Delivered an AI training program with HoussniJob Innovation under the GIZ program.",
       "Guided students in workflow automation using n8n and API integrations.",
-      "Taught prompt engineering and AI agent automation techniques.",
-      "Mentored participants on applying AI tools to real-world projects.",
     ],
     className: "md:col-span-2",
     thumbnail: "/houssnijob.png",
