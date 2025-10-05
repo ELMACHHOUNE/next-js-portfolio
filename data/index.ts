@@ -108,6 +108,25 @@ export const projects = [
     link: "https://mr-technologies.ma/",
     sourceCode: "https://mr-technologies.ma/",
   },
+  {
+    id: 5,
+    title: "NLIVRILIK Delivery Platform",
+    des: "A modern and efficient delivery platform that connects users with trusted couriers, offering a seamless experience for managing deliveries and tracking orders in real time.",
+    img: "/nlivrilik_website.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.png", "/nodejs.svg", "express.svg"],
+    link: "https://nlivrilik.ma/",
+    sourceCode: "https://nlivrilik.ma/",
+  },
+  {
+    id: 6,
+    title: "Toolkit Hub",
+    des: "A fully client-side platform built with React and Tailwind CSS, providing developers with an all-in-one toolkit for UI inspiration, productivity resources, and design components — all without a backend.",
+    img: "/toolkithub.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+    link: "https://toolkit-hub.gotodev.ma/",
+    sourceCode: "https://toolkit-hub.gotodev.ma/",
+  },
+  
 ] as const;
 
 export const testimonials = [

@@ -30,7 +30,7 @@ export const Hero = () => {
           {/* Profile Photo */}
           <div className="relative mb-6">
             <img
-              src="/profile.jpg" // Replace with the actual path to your profile photo
+              src="/elmachhoune.png" // Replace with the actual path to your profile photo
               alt="Profile Photo"
               className="h-28 w-28 rounded-full border-4 border-blue-100 shadow-lg sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
             />
