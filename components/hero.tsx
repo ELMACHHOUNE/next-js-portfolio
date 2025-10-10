@@ -5,6 +5,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { MagicButton } from "@/components/ui/magic-button";
 import { links } from "@/config";
+import { ContributionGrid } from "@/components/ui/contribution-grid";
 
 export const Hero = () => {
   return (
@@ -27,14 +28,31 @@ export const Hero = () => {
 
       <div className="relative z-10 my-16 sm:my-20 flex justify-center">
         <div className="flex max-w-[95vw] flex-col items-center justify-center sm:max-w-[89vw] md:max-w-2xl lg:max-w-[60vw]">
-          {/* Profile Photo */}
-          <div className="relative mb-6">
-            <img
-              src="/elmachhoune.png" // Replace with the actual path to your profile photo
-              alt="Profile Photo"
-              className="h-28 w-28 rounded-full border-4 border-blue-100 shadow-lg sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
-            />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 opacity-30 blur-lg"></div>
+          {/* Theme-styled "GitHub contributions" section */}
+          <div className="relative mb-6 w-full flex justify-center">
+            <div className="relative w-full rounded-2xl p-[2px] bg-gradient-to-r from-[#CBACF9] via-white/70 to-[#CBACF9] dark:via-[#000319] shadow-lg">
+              <div className="relative rounded-2xl bg-white/70 dark:bg-[#000319]/60 backdrop-blur-md p-4 sm:p-6 md:p-8 min-h-[200px] sm:min-h-[260px] md:min-h-[300px] overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <ContributionGrid
+                    palette="theme"
+                    weeks={48}
+                    size={12}
+                    gap={4}
+                    className="opacity-95 scale-[0.92] sm:scale-100"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-black/5 dark:ring-white/10 pointer-events-none" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="rounded-full p-[3px] bg-gradient-to-tr from-[#CBACF9] to-white dark:to-[#000319] shadow-xl">
+                    <img
+                      src="/elmachhoune.png"
+                      alt="Profile Photo"
+                      className="h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 rounded-full ring-4 ring-white dark:ring-[#000319] object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <h2 className="max-w-80 text-center text-[10px] uppercase tracking-widest text-blue-100 sm:text-xs">
