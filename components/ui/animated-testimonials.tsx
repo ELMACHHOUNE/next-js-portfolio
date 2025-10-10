@@ -46,6 +46,19 @@ export const AnimatedTestimonials = ({
     return index === active;
   };
 
+  // Add swipe/drag handler
+  const handleDragEnd = (_e: any, info: { offset: { x: number }; velocity: { x: number } }) => {
+    const offsetX = info?.offset?.x ?? 0;
+    const velocityX = info?.velocity?.x ?? 0;
+    const threshold = 60;
+    const velocityThreshold = 300;
+    if (offsetX <= -threshold || velocityX <= -velocityThreshold) {
+      handleNext();
+    } else if (offsetX >= threshold || velocityX >= velocityThreshold) {
+      handlePrev();
+    }
+  };
+
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
@@ -109,6 +122,24 @@ export const AnimatedTestimonials = ({
                 );
               })}
             </AnimatePresence>
+
+            {/* Drag overlay to enable swipe/drag navigation */}
+            <motion.div
+              drag="x"
+              dragElastic={0.2}
+              dragMomentum={false}
+              onDragEnd={handleDragEnd}
+              onWheel={(e) => {
+                const absX = Math.abs(e.deltaX);
+                const absY = Math.abs(e.deltaY);
+                if (absX > absY && absX > 20) {
+                  e.preventDefault();
+                  e.deltaX > 0 ? handleNext() : handlePrev();
+                }
+              }}
+              className="absolute inset-0 z-50 cursor-grab active:cursor-grabbing touch-pan-y"
+              aria-label="Drag to switch testimonial"
+            />
           </div>
         </div>
         <div className="flex flex-col justify-between py-4">
