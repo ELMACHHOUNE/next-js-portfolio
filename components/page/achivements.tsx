@@ -26,15 +26,33 @@ export function Achivements() {
   ];
 
   return (
-    <div id="achivements" className="w-full max-w-7xl">
+    <div id="achivements" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <section className="mb-10">
-        <h1 className="text-3xl font-semibold text-white sm:text-4xl">Achivements & Experience</h1>
-        <p className="mt-2 text-sm text-neutral-300 sm:text-base">
-          Highlights of impact, milestones, and hands-on experience.
-        </p>
+        <div className="flex items-center gap-4">
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-700/60" />
+          <h1 className="text-center text-3xl font-semibold text-white sm:text-4xl">
+            Achivements & Experience
+          </h1>
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-700/60" />
+        </div>
+        <div className="mt-2 mx-auto h-px w-32 bg-neutral-700/60 sm:hidden" />
+
+        <div className="mt-3 flex items-center gap-4">
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-800/50" />
+          <p className="text-center text-sm text-neutral-300 sm:text-base max-w-2xl mx-auto px-2">
+            Highlights of impact, milestones, and hands-on experience.
+          </p>
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-800/50" />
+        </div>
+        <div className="mt-2 mx-auto h-px w-40 bg-neutral-800/50 sm:hidden" />
       </section>
 
       <AnimatedTestimonials testimonials={testimonials} />
+
+
+
+
+      
     </div>
   );
 }
