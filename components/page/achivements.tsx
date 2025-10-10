@@ -1,4 +1,5 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { StudentsGallery } from "./students-gallery";
 
 export function Achivements() {
   const testimonials = [    {
@@ -49,10 +50,27 @@ export function Achivements() {
 
       <AnimatedTestimonials testimonials={testimonials} />
 
+      {/* Students section */}
+      <section className="mt-16">
+        <div className="flex items-center gap-4">
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-700/60" />
+          <h2 className="text-center text-3xl font-semibold text-white sm:text-4xl">
+            Moments with Students
+          </h2>
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-700/60" />
+        </div>
+        <div className="mt-2 mx-auto h-px w-28 bg-neutral-700/60 sm:hidden" />
+        <div className="mt-3 flex items-center gap-4">
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-800/50" />
+          <p className="text-center text-sm text-neutral-300 sm:text-base max-w-2xl mx-auto px-2">
+            Workshops, hackathons, and coaching snapshots.
+          </p>
+          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-800/50" />
+        </div>
+        <div className="mt-2 mx-auto h-px w-36 bg-neutral-800/50 sm:hidden" />
 
-
-
-      
+        <StudentsGallery />
+      </section>
     </div>
   );
 }
