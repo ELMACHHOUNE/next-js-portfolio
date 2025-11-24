@@ -118,7 +118,7 @@
     "react-lottie": "^1.2.10",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.180.0",
+    "three": "^0.181.0",
     "three-globe": "^2.44.0"
   },
   "devDependencies": {
