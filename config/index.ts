@@ -56,7 +56,6 @@ export const siteConfig: Metadata = {
     "react-icons",
     "lucide-react",
     "next-themes",
-    "postcss",
     "prettier",
     "react-dom",
     "tailwindcss",

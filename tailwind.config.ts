@@ -1,10 +1,8 @@
 import svgToDataUri from "mini-svg-data-uri";
 import type { Config } from "tailwindcss";
-import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
+import tailwindcssAnimate from "tailwindcss-animate";
 
-import "tailwindcss/colors";
-
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -174,24 +172,24 @@ const config = {
   	}
   },
   plugins: [
-    require("tailwindcss-animate"),
+    tailwindcssAnimate,
     addVariablesForColors,
-    function ({ matchUtilities, theme }: any) {
+    ({ matchUtilities, theme }) => {
       matchUtilities(
         {
-          "bg-grid": (value: any) => ({
+          "bg-grid": (value: string) => ({
             backgroundImage: `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
             )}")`,
           }),
-          "bg-grid-small": (value: any) => ({
+          "bg-grid-small": (value: string) => ({
             backgroundImage: `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
             )}")`,
           }),
-          "bg-dot": (value: any) => ({
+          "bg-dot": (value: string) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" cx="10" cy="10" r="1.6257413380501518"/></svg>`
             )}")`,
           }),
         },
@@ -199,17 +197,37 @@ const config = {
       );
     },
   ],
-} satisfies Config;
+};
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  const allColors = flattenColorPalette(theme("colors"));
+  const cssVars = Object.fromEntries(
+    Object.entries(allColors).map(([token, value]) => [`--${token}`, value])
   );
+  addBase({ ":root": cssVars });
+}
 
-  addBase({
-    ":root": newVars,
+function flattenColorPalette(
+  colors: Record<string, any> = {},
+  prefix = "",
+  result: Record<string, string> = {}
+): Record<string, string> {
+  Object.entries(colors).forEach(([key, value]) => {
+    const nextPrefix =
+      key === "DEFAULT" ? prefix : prefix ? `${prefix}-${key}` : key;
+
+    if (typeof value === "string") {
+      const token = nextPrefix || key;
+      if (token) result[token] = value;
+      return;
+    }
+
+    if (value && typeof value === "object") {
+      flattenColorPalette(value, nextPrefix, result);
+    }
   });
+
+  return result;
 }
 
 export default config;

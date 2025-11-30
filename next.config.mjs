@@ -1,12 +1,11 @@
+// Force LightningCSS to use the WASM transformer (helps on Windows)
+process.env.CSS_TRANSFORMER_WASM = "1";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // Disable strict TypeScript checks during build
     typescript: {
       ignoreBuildErrors: true,
-    },
-    // Disable ESLint checks during build
-    eslint: {
-      ignoreDuringBuilds: true,
     },
     webpack: (config, { isServer }) => {
       if (!isServer) {
@@ -20,7 +19,7 @@ const nextConfig = {
       }
       return config;
     },
+    turbopack: {},
   };
   
-  export default nextConfig;
-  
+export default nextConfig;
