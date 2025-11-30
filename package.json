@@ -11,7 +11,7 @@
   "author": {
     "name": "Mohamed EL MACHHOUNE",
     "email": "business.elmachhoune@gmail.com",
-    "url": "https://www.elmachhoune.me/"
+    "url": "https://elmachhoune.me/"
   },
   "description": "Modern & Minimalist Portfolio showcasing expertise in Full-Stack Development with the MERN stack, UX/UI & Graphic Design, Instruction, and Consulting.",
   "keywords": [
@@ -81,17 +81,17 @@
   },
   "homepage": "https://github.com/ELMACHHOUNE/",
   "bugs": {
-    "url": "https://www.elmachhoune.me/",
+    "url": "https://elmachhoune.me/",
     "email": "business.elmachhoune@gmail.com"
   },
   "funding": [
     {
       "type": "ELMACHHOUNE",
-      "url": "https://www.elmachhoune.me/"
+      "url": "https://elmachhoune.me/"
     },
     {
       "type": "Buy me a coffee",
-      "url": "https://www.elmachhoune.me/"
+      "url": "https://elmachhoune.me/"
     }
   ],
   "dependencies": {
@@ -110,7 +110,7 @@
     "motion": "^12.23.24",
     "next": "^16.0.6",
     "next-themes": "^0.4.6",
-  "postcss": "^8.4.31",
+  "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",

@@ -75,7 +75,7 @@ export const siteConfig: Metadata = {
   openGraph: {
     title: `${links.ownerName}`,
     description: `Modern and minimalist portfolio showcasing expertise in MERN stack development, UX/UI & Graphic design, and consultation.`,
-    url: "https://www.elmachhoune.me/",
+    url: "https://elmachhoune.me/",
     siteName: `${links.ownerName}'s Portfolio`,
     images: [
       {
