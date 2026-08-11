@@ -69,7 +69,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-5",
+        "mx-auto grid max-w-7xl grid-cols-1 gap-5 md:grid-cols-5 lg:gap-7",
         className
       )}
     >
@@ -127,99 +127,99 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
+        "group/bento relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-purple/40 hover:bg-white/[0.05] hover:shadow-[0_20px_60px_-15px_rgba(203,172,249,0.35)]",
         className
       )}
-      style={{
-        background: "rgb(4,7,29)",
-        backgroundImage:
-          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      }}
     >
-      <div className={cn("h-full", id === 6 && "flex justify-center")}>
-        <div className="absolute h-full w-full">
-          {img && (
-            <Image
-              width={689}
-              height={541}
-              src={img}
-              alt="Image"
-              className={cn("object-cover object-center", imgClassName)}
-            />
-          )}
-        </div>
+      {(img || spareImg) && (
+        <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      )}
 
+      {img && (
+        <div className="pointer-events-none absolute inset-0 h-full w-full">
+          <Image
+            width={689}
+            height={541}
+            src={img}
+            alt="Image"
+            className={cn("object-cover object-center", imgClassName)}
+          />
+        </div>
+      )}
+
+      {spareImg && (
         <div
           className={cn(
-            "absolute right-0 -mb-5",
+            "pointer-events-none absolute right-0 -mb-5",
             id === 5 && "w-full opacity-80"
           )}
         >
-          {spareImg && (
-            <Image
-              width={208}
-              height={96}
-              src={spareImg}
-              alt="Spare Image"
-              className="h-full w-full object-cover object-center"
-            />
-          )}
+          <Image
+            width={208}
+            height={96}
+            src={spareImg}
+            alt="Spare Image"
+            className="h-full w-full object-cover object-center"
+          />
         </div>
-        {id === 6 && <BackgroundGradientAnimation />}
+      )}
 
-        <div
-          className={cn(
-            "relative flex min-h-40 flex-col p-5 px-5 transition duration-200 group-hover/bento:translate-x-2 md:h-full lg:p-10",
-            titleClassName
-          )}
-        >
-          <div className="z-10 font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base">
+      {id === 6 && <BackgroundGradientAnimation />}
+
+      <div
+        className={cn(
+          "relative z-10 flex min-h-44 flex-1 flex-col gap-5 p-6 lg:p-8",
+          titleClassName
+        )}
+      >
+        {description && (
+          <div className="w-fit rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs font-medium text-purple backdrop-blur-sm lg:text-sm">
             {description}
           </div>
+        )}
 
-          <div className="z-10 max-w-96 font-sans text-lg font-bold lg:text-3xl">
-            {title}
-          </div>
-
-          {id === 3 && (
-            <div className="z-10 mt-5 flex max-w-md flex-wrap items-center justify-center gap-2 lg:mt-6 lg:gap-3">
-              {techStack.map((tech) => (
-                <span
-                  key={tech.name}
-                  className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-[#10132e] px-3 py-2 text-xs text-neutral-200 lg:text-sm"
-                >
-                  <tech.icon className="h-4 w-4 lg:h-5 lg:w-5" style={{ color: tech.color }} />
-                  {tech.name}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {id === 2 && <GridGlobe />}
-
-          {id === 6 && (
-            <div className="group relative mt-5">
-              {animationData ? (
-                <Lottie
-                  animationData={animationData}
-                  loop={copied}
-                  autoplay={copied}
-                  style={{ width: "200px", height: "200px" }}
-                />
-              ) : (
-                <p>Loading animation...</p>
-              )}
-
-              <MagicButton
-                title={copied ? "Email copied!" : "Copy my email"}
-                icon={<IoCopyOutline />}
-                otherClasses="!bg-[#161a31]"
-                handleClick={handleCopy}
-                asChild
-              />
-            </div>
-          )}
+        <div className="max-w-md font-sans text-xl font-bold text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] lg:text-3xl">
+          {title}
         </div>
+
+        {id === 3 && (
+          <div className="mt-auto flex max-w-md flex-wrap items-center justify-center gap-2 lg:gap-3">
+            {techStack.map((tech) => (
+              <span
+                key={tech.name}
+                className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2 text-xs text-neutral-200 backdrop-blur-sm lg:text-sm"
+              >
+                <tech.icon className="h-4 w-4 lg:h-5 lg:w-5" style={{ color: tech.color }} />
+                {tech.name}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {id === 2 && <GridGlobe />}
+
+        {id === 6 && (
+          <div className="group relative mt-auto flex flex-col items-center gap-6">
+            {animationData ? (
+              <Lottie
+                animationData={animationData}
+                loop={copied}
+                autoplay={copied}
+                style={{ width: "200px", height: "200px", marginTop: "-1rem" }}
+              />
+            ) : (
+              <p>Loading animation...</p>
+            )}
+
+            <MagicButton
+              title={copied ? "Email copied!" : "Copy my email"}
+              icon={<IoCopyOutline />}
+              otherClasses="!bg-[#161a31]"
+              handleClick={handleCopy}
+              asChild
+            />
+          </div>
+        )}
       </div>
     </div>
   );
