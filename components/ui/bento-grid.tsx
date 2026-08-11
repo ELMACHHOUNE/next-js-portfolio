@@ -1,9 +1,6 @@
 "use client"; // Ensure the component is client-side
 
 import Image from "next/image";
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
 import {
   SiDocker,
   SiDotnet,
@@ -22,23 +19,8 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { Sparkles } from "lucide-react";
-import { links } from "@/config";
+import { DottedMap } from "@/components/ui/dotted-map";
 import { cn } from "@/lib/utils";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-
-// Dynamically import other components
-const BackgroundGradientAnimation = dynamic(
-  () => import("./background-gradient-animation").then((mod) => mod.BackgroundGradientAnimation),
-  { ssr: false }
-);
-const MagicButton = dynamic(
-  () => import("./magic-button").then((mod) => mod.MagicButton),
-  { ssr: false }
-);
-const GridGlobe = dynamic(
-  () => import("../grid-globe").then((mod) => mod.GridGlobe),
-  { ssr: false }
-);
 
 const techStack = [
   { name: "React.js", icon: SiReact, color: "#61DAFB" },
@@ -97,33 +79,6 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const [copied, setCopied] = useState(false);
-  const [animationData, setAnimationData] = useState<object | null>(null);
-
-  // Dynamically load the animation data
-  useEffect(() => {
-    async function loadAnimationData() {
-      const animation = await import("@/data/confetti.json");
-      setAnimationData(animation.default);
-    }
-    loadAnimationData();
-  }, []);
-
-  const handleCopy = () => {
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(links.ownerEmail);
-      setCopied(true);
-    }
-  };
-
-  // Reset copied state after 3.5 seconds
-  useEffect(() => {
-    if (!copied) return;
-
-    const timeout = setTimeout(() => setCopied(false), 3500);
-    return () => clearTimeout(timeout);
-  }, [copied]);
-
   return (
     <div
       className={cn(
@@ -164,7 +119,22 @@ export const BentoGridItem = ({
         </div>
       )}
 
-      {id === 6 && <BackgroundGradientAnimation />}
+      {id === 2 && (
+        <DottedMap
+          markers={[
+            { lat: 33.5731, lng: -7.5898, size: 0.6, pulse: true },
+            { lat: 40.7128, lng: -74.006, size: 0.6, pulse: true },
+            { lat: 51.5074, lng: -0.1278, size: 0.6, pulse: true },
+            { lat: 35.6762, lng: 139.6503, size: 0.6, pulse: true },
+            { lat: -33.8688, lng: 151.2093, size: 0.6, pulse: true },
+          ]}
+          dotColor="rgba(203,172,249,0.3)"
+          markerColor="#CBACF9"
+          dotRadius={0.2}
+          pulse
+          className="pointer-events-none absolute inset-0 z-0 opacity-70"
+        />
+      )}
 
       <div
         className={cn(
@@ -172,52 +142,47 @@ export const BentoGridItem = ({
           titleClassName
         )}
       >
-        {description && (
+        {description && id !== 3 && (
           <div className="w-fit rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs font-medium text-purple backdrop-blur-sm lg:text-sm">
             {description}
           </div>
         )}
 
-        <div className="max-w-md font-sans text-xl font-bold text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] lg:text-3xl">
-          {title}
-        </div>
-
-        {id === 3 && (
-          <div className="mt-auto flex max-w-md flex-wrap items-center justify-center gap-2 lg:gap-3">
-            {techStack.map((tech) => (
-              <span
-                key={tech.name}
-                className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2 text-xs text-neutral-200 backdrop-blur-sm lg:text-sm"
-              >
-                <tech.icon className="h-4 w-4 lg:h-5 lg:w-5" style={{ color: tech.color }} />
-                {tech.name}
-              </span>
-            ))}
+        {id !== 3 && (
+          <div className="w-3/4 max-w-3xl font-sans text-xl font-bold text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] lg:text-3xl">
+            {title}
           </div>
         )}
 
-        {id === 2 && <GridGlobe />}
+        {id === 3 && (
+          <div className="relative flex w-full flex-col gap-6">
+            <div className="flex flex-col items-center gap-2">
+              {description && (
+                <div className="w-fit rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs font-medium text-purple backdrop-blur-sm lg:text-sm">
+                  {description}
+                </div>
+              )}
+              <div className="text-center font-sans text-2xl font-bold text-white lg:text-4xl">
+                {title}
+              </div>
+            </div>
 
-        {id === 6 && (
-          <div className="group relative mt-auto flex flex-col items-center gap-6">
-            {animationData ? (
-              <Lottie
-                animationData={animationData}
-                loop={copied}
-                autoplay={copied}
-                style={{ width: "200px", height: "200px", marginTop: "-1rem" }}
-              />
-            ) : (
-              <p>Loading animation...</p>
-            )}
-
-            <MagicButton
-              title={copied ? "Email copied!" : "Copy my email"}
-              icon={<IoCopyOutline />}
-              otherClasses="!bg-[#161a31]"
-              handleClick={handleCopy}
-              asChild
-            />
+            <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+              <div
+                className="flex w-max items-center gap-3 animate-scroll"
+                style={{ "--animation-duration": "30s" } as React.CSSProperties}
+              >
+                {[...techStack, ...techStack].map((tech, i) => (
+                  <span
+                    key={`${tech.name}-${i}`}
+                    className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-neutral-200 backdrop-blur-sm lg:px-5 lg:py-4 lg:text-base"
+                  >
+                    <tech.icon className="h-5 w-5 lg:h-6 lg:w-6" style={{ color: tech.color }} />
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>
