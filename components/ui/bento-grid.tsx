@@ -4,8 +4,25 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import {
+  SiDocker,
+  SiDotnet,
+  SiExpress,
+  SiFastapi,
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiRust,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiTypescript,
+} from "react-icons/si";
+import { Sparkles } from "lucide-react";
 import { links } from "@/config";
-import { techStack } from "@/data";
 import { cn } from "@/lib/utils";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -22,6 +39,25 @@ const GridGlobe = dynamic(
   () => import("../grid-globe").then((mod) => mod.GridGlobe),
   { ssr: false }
 );
+
+const techStack = [
+  { name: "React.js", icon: SiReact, color: "#61DAFB" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
+  { name: "Rust", icon: SiRust, color: "#FFFFFF" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "Three.js", icon: SiThreedotjs, color: "#FFFFFF" },
+  { name: "FastAPI", icon: SiFastapi, color: "#009688" },
+  { name: "C#", icon: SiDotnet, color: "#512BD4" },
+  { name: "AI integration", icon: Sparkles, color: "#74AA9C" },
+];
 
 export const BentoGrid = ({
   className,
@@ -129,32 +165,6 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {id === 3 && (
-            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
-              <div className="flex flex-col gap-3 lg:gap-8">
-                {techStack.stack1.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg bg-[#10132e] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
-              </div>
-              <div className="flex flex-col gap-3 lg:gap-8">
-                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
-                {techStack.stack2.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg bg-[#10132e] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
         {id === 6 && <BackgroundGradientAnimation />}
 
         <div
@@ -170,6 +180,20 @@ export const BentoGridItem = ({
           <div className="z-10 max-w-96 font-sans text-lg font-bold lg:text-3xl">
             {title}
           </div>
+
+          {id === 3 && (
+            <div className="z-10 mt-5 flex max-w-md flex-wrap items-center justify-center gap-2 lg:mt-6 lg:gap-3">
+              {techStack.map((tech) => (
+                <span
+                  key={tech.name}
+                  className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-[#10132e] px-3 py-2 text-xs text-neutral-200 lg:text-sm"
+                >
+                  <tech.icon className="h-4 w-4 lg:h-5 lg:w-5" style={{ color: tech.color }} />
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          )}
 
           {id === 2 && <GridGlobe />}
 
