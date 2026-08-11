@@ -1,13 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 // Card props: add aspect to control portrait/landscape
 export function Card({
   card,
-  index,
   aspect = "portrait",
-  // ...existing props...
 }: {
   card: {
     category: string;
@@ -15,23 +14,19 @@ export function Card({
     src: string;
     content?: React.ReactNode;
   };
-  index: number;
   aspect?: "portrait" | "landscape";
-  // ...existing prop types...
 }) {
-  // ...existing code...
-
   const mediaAspect =
     aspect === "landscape" ? "aspect-[16/9]" : "aspect-[3/4]"; // default was portrait 3/4
 
   return (
-    // ...existing code...
     <div className="relative w-full group transition-transform duration-300 hover:-translate-y-1">
       {/* image/media wrapper - switch aspect by prop */}
       <div className={`relative w-full ${mediaAspect} overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/5`}>
-        <img
+        <Image
           src={card.src}
           alt={card.title}
+          fill
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           draggable={false}
           loading="lazy"

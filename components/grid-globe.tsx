@@ -6,8 +6,7 @@ const World = dynamic(() => import("./ui/globe").then((m) => m.World), {
   ssr: false,
 });
 
-export const GridGlobe = () => {
-  const globeConfig = {
+const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
     showAtmosphere: true,
@@ -29,8 +28,8 @@ export const GridGlobe = () => {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
-  const sampleArcs = [
+const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+const sampleArcs = [
     {
       order: 1,
       startLat: -19.885592,
@@ -391,8 +390,9 @@ export const GridGlobe = () => {
       arcAlt: 0.3,
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
-  ];
+];
 
+export const GridGlobe = () => {
   return (
     <div className="absolute -left-5 top-36 flex h-full w-full items-center justify-center md:top-40">
       <div className="relative mx-auto h-96 w-full max-w-7xl overflow-hidden px-4">

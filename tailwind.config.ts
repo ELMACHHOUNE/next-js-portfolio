@@ -1,5 +1,6 @@
 import svgToDataUri from "mini-svg-data-uri";
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
@@ -174,7 +175,7 @@ const config: Config = {
   plugins: [
     tailwindcssAnimate,
     addVariablesForColors,
-    ({ matchUtilities, theme }) => {
+    ({ matchUtilities, theme }: PluginAPI) => {
       matchUtilities(
         {
           "bg-grid": (value: string) => ({
@@ -199,7 +200,7 @@ const config: Config = {
   ],
 };
 
-function addVariablesForColors({ addBase, theme }: any) {
+function addVariablesForColors({ addBase, theme }: PluginAPI) {
   const allColors = flattenColorPalette(theme("colors"));
   const cssVars = Object.fromEntries(
     Object.entries(allColors).map(([token, value]) => [`--${token}`, value])
@@ -208,7 +209,7 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 function flattenColorPalette(
-  colors: Record<string, any> = {},
+  colors: Record<string, string | object> = {},
   prefix = "",
   result: Record<string, string> = {}
 ): Record<string, string> {
@@ -223,7 +224,11 @@ function flattenColorPalette(
     }
 
     if (value && typeof value === "object") {
-      flattenColorPalette(value, nextPrefix, result);
+      flattenColorPalette(
+        value as Record<string, string | object>,
+        nextPrefix,
+        result
+      );
     }
   });
 

@@ -3,6 +3,10 @@
   import { Button } from "@/components/ui/moving-borders";
   import { workExperience } from "@/data";
 
+  const durations = workExperience.map(() =>
+    Math.floor(Math.random() * 10000 + 10000)
+  );
+
   export const Experience = () => {
     return (
       <section id="experience" className="py-20">
@@ -11,12 +15,12 @@
         </h1>
 
         <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">
-          {workExperience.map((experience) => (
+          {workExperience.map((experience, index) => (
             <Button
               key={experience.id}
               borderRadius="1.75rem"
               className="flex-1 border-neutral-200 text-white dark:border-slate-800"
-              duration={Math.floor(Math.random() * 10000 + 10000)}
+              duration={durations[index]}
             >
               <div className="flex flex-col gap-2 p-3 py-6 md:p-5 lg:flex-row lg:items-center lg:p-10">
                 <Image

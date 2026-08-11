@@ -11,27 +11,29 @@ import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-type ButtonProps = {
+type ButtonProps<T extends React.ElementType = "button"> = {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: T;
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
 };
 
-export const Button = ({
+export const Button = <T extends React.ElementType = "button">({
   borderRadius = "1.75rem",
   children,
-  as: Component = "button",
+  as,
   containerClassName,
   borderClassName,
   duration,
   className,
   ...otherProps
-}: ButtonProps) => {
+}: ButtonProps<T>) => {
+  const Component = (as ?? "button") as unknown as React.JSXElementConstructor<
+    Record<string, unknown> & { children?: React.ReactNode }
+  >;
   return (
     <Component
       className={cn(
@@ -77,7 +79,6 @@ type MovingBorderProps = {
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
 };
 
 export const MovingBorder = ({
@@ -87,7 +88,7 @@ export const MovingBorder = ({
   ry,
   ...otherProps
 }: MovingBorderProps) => {
-  const pathRef = useRef<any>();
+  const pathRef = useRef<SVGRectElement>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {

@@ -62,7 +62,7 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
-  const [animationData, setAnimationData] = useState(null);
+  const [animationData, setAnimationData] = useState<object | null>(null);
 
   // Dynamically load the animation data
   useEffect(() => {

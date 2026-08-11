@@ -114,8 +114,8 @@ Trained over 34 students.</Caption>,
 ];
 
 export function StudentsGallery() {
-  const cards = studentCards.map((card, index) => (
-    <Card key={card.src} card={card} index={index} aspect="landscape" />
+  const cards = studentCards.map((card) => (
+    <Card key={card.src} card={card} aspect="landscape" />
   ));
 
   return (
