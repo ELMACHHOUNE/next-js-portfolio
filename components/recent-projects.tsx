@@ -13,30 +13,30 @@ export const RecentProjects = () => {
         <span className="text-purple">recent projects</span>
       </h1>
 
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-x-16 gap-y-8 p-4">
+      <div className="mt-10 grid grid-cols-1 justify-items-center gap-x-16 gap-y-8 p-4 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map(({ id, des, iconLists, img, link, sourceCode, title }) => (
           <div
             key={id}
-            className="flex h-[27rem] w-[80vw] items-center justify-center sm:h-[34rem] sm:w-[500px] lg:min-h-[28rem]"
+            className="flex h-[27rem] w-full max-w-[500px] items-center justify-center sm:h-[34rem] lg:h-[28rem] xl:h-[30rem]"
           >
             <PinContainer title="Visit" href={link}>
-              <div className="relative mb-8 flex h-[26vh] w-[70vw] items-center justify-center overflow-hidden sm:h-[34vh] sm:w-[500px]">
+              <div className="relative mb-8 flex h-[26vh] w-full items-center justify-center overflow-hidden sm:h-[34vh] lg:h-[28vh]">
                 <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-3xl">
                   <Image
-                    height={280}
-                    width={480}
+                    fill
                     src="/bg.png"
                     alt="bg-img"
+                    sizes="(min-width:1024px) 33vw, 100vw"
                     className="object-cover opacity-80"
                   />
                 </div>
 
                 <Image
-                  height={260}
-                  width={420}
+                  fill
                   src={img}
                   alt={title}
-                  className="absolute bottom-0 z-10"
+                  sizes="(min-width:1024px) 33vw, 100vw"
+                  className="z-10 object-contain object-bottom"
                 />
               </div>
 
