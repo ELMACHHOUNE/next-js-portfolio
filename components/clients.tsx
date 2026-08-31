@@ -21,13 +21,12 @@ export const Clients = () => {
         <div className="flex flex-wrap items-center justify-center gap-4 max-lg:mt-10 md:gap-16">
           {companies.map(({ id, name, nameImg }) => (
             <div key={id} className="flex max-w-32 gap-2 md:max-w-60">
-        
               <Image
                 height={28}
                 width={131}
                 src={nameImg}
                 alt={name}
-                className="w-20 md:w-24"
+                className="w-20 md:w-24 h-auto object-contain"
               />
             </div>
           ))}

@@ -199,6 +199,16 @@ export const companies = [
     nameImg: "/jadara.png",
   },
   {
+    id: 18,
+    name: "GON Wings Tech",
+    nameImg: "/gon-wings-tech.png",
+  },
+  {
+    id: 17,
+    name: "Nouaceur Wings Tech",
+    nameImg: "/nouaceur-wings-tech.png",
+  },
+  {
     id: 13,
     name: "GoMyCode",
     nameImg: "/gmc.jpg",
@@ -212,6 +222,11 @@ export const companies = [
     id: 15,
     name: "nlivrilik",
     nameImg: "/nlivrilik.png",
+  },
+  {
+    id: 16,
+    name: "MDSSUP",
+    nameImg: "/mdssup.png",
   },
  
 
@@ -263,16 +278,15 @@ export const workExperience = [
   
   {
     id: 6,
-    title: "Technical Assistant in Web Development at Jadara Foundation (Freelance)",
+    title: "Technical Assistant in Web Development at Jadara Foundation – GON Wings Tech School",
     desc: [
       "Sep – Dec 2025: Assisted the 'GON Wings Tech School' project within Jadara Foundation’s Second Chance Schools program.",
       "Delivered remote Full Stack Web Development training (frontend & backend) via the ALX platform for NEET youth in Guelmim-Oued Noun.",
     ],
-    className: "md:col-span-2", 
+    className: "md:col-span-2",
     thumbnail: "/jadara.png",
+    logos: ["/jadara.png", "/gon-wings-tech.png"],
   },
-  
-  
   {
     id: 7,
     title: "AI Instructor at HoussniJob Innovation (Freelance)",
@@ -282,6 +296,27 @@ export const workExperience = [
     ],
     className: "md:col-span-2",
     thumbnail: "/houssnijob.png",
+  },
+  {
+    id: 9,
+    title: "Full Stack MERN Bootcamp Instructor (Vacataire) at Jadara Foundation – Nouaceur Wings Tech",
+    desc: [
+      "Dec 2025 – Jun 2026 (6 months, On-site, Bouskoura – Casablanca): Intensive Full Stack Web Development bootcamp – MERN Stack.",
+      "Nouaceur Wings Tech project by Jadara Foundation – presentiel training focused on hands-on projects & employability.",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/jadara.png",
+    logos: ["/jadara.png", "/nouaceur-wings-tech.png"],
+  },
+  {
+    id: 8,
+    title: "IT Development Instructor (Vacataire) at MDSSUP – Mohammedia",
+    desc: [
+      "Feb – Jul 2026 (On-site, Vacataire): IT Development for 1st & 2nd year Bac+2.",
+      "MDSSUP — accredited private institution where innovation comes to life; hands-on, project-based & employability-focused programs.",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/mdssup.png",
   },
   
   

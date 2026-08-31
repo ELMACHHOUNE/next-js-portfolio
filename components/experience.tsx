@@ -23,13 +23,26 @@
               duration={durations[index]}
             >
               <div className="flex flex-col gap-2 p-3 py-6 md:p-5 lg:flex-row lg:items-center lg:p-10">
-                <Image
-                  width={95}
-                  height={87}
-                  src={experience.thumbnail}
-                  alt={experience.title}
-                  className="w-16 md:w-20 lg:w-32"
-                />
+                {(() => {
+                  const exp = experience as typeof experience & {
+                    logos?: readonly string[];
+                  };
+                  const logos = exp.logos ?? [exp.thumbnail];
+                  return (
+                    <div className="flex flex-col items-center gap-2 lg:gap-3 shrink-0">
+                      {logos.map((logo, i) => (
+                        <Image
+                          key={`${experience.id}-logo-${i}`}
+                          width={128}
+                          height={80}
+                          src={logo}
+                          alt={`${experience.title} logo ${i + 1}`}
+                          className="w-20 md:w-24 lg:w-28 h-auto object-contain"
+                        />
+                      ))}
+                    </div>
+                  );
+                })()}
 
                 <div className="lg:ms-5">
                   <h1 className="text-start text-xl font-bold md:text-2xl">
