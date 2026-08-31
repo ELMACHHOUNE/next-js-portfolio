@@ -194,6 +194,11 @@ export const companies = [
     nameImg: "/gmc.png",
   },
   {
+    id: 19,
+    name: "Woolf",
+    nameImg: "/woolf.jpg",
+  },
+  {
     id: 12,
     name: "Jadara",
     nameImg: "/jadara.png",
@@ -267,13 +272,14 @@ export const workExperience = [
   },
   {
     id: 5,
-    title: "Instructor – MSc in Software Engineering at GoMyCode School of Technology (Freelance)",
+    title: "Instructor – MSc Software Engineering at GMC School of Technology x Woolf (Freelance)",
     desc: [
-      "Jan 2025 – Present (Remote, Morocco): Instructor in the 18-month MSc Software Engineering program.",
-      "Program accredited by Woolf and internationally recognized (MFHEA Level 7 – 90 ECTS).",
+      "Jan 2025 – Present (Remote, Morocco): Instructor in the 18-month MSc Software Engineering – MSc Computer Science: Software Engineering – at GMC School of Technology, a Woolf member college.",
+      "Woolf is a Malta-based, MFHEA-licensed higher-education institution in the European Higher Education Area (collegiate model); program MFHEA Level 7 – 90 ECTS, internationally recognized.",
     ],
     className: "md:col-span-2",
     thumbnail: "/gmc.png",
+    logos: ["/gmc.png", "/woolf.jpg"],
   },
   
   {
@@ -299,7 +305,7 @@ export const workExperience = [
   },
   {
     id: 9,
-    title: "Full Stack MERN Bootcamp Instructor (Vacataire) at Jadara Foundation – Nouaceur Wings Tech",
+    title: "Full Stack MERN Bootcamp Instructor (Freelance) at Jadara Foundation – Nouaceur Wings Tech",
     desc: [
       "Dec 2025 – Jun 2026 (6 months, On-site, Bouskoura – Casablanca): Intensive Full Stack Web Development bootcamp – MERN Stack.",
       "Nouaceur Wings Tech project by Jadara Foundation – presentiel training focused on hands-on projects & employability.",
@@ -310,13 +316,23 @@ export const workExperience = [
   },
   {
     id: 8,
-    title: "IT Development Instructor (Vacataire) at MDSSUP – Mohammedia",
+    title: "IT Development Instructor (Freelance) at MDSSUP – Mohammedia",
     desc: [
-      "Feb – Jul 2026 (On-site, Vacataire): IT Development for 1st & 2nd year Bac+2.",
+      "Feb – Jul 2026 (On-site, Freelance): IT Development for 1st & 2nd year Bac+2.",
       "MDSSUP — accredited private institution where innovation comes to life; hands-on, project-based & employability-focused programs.",
     ],
     className: "md:col-span-2",
     thumbnail: "/mdssup.png",
+  },
+  {
+    id: 10,
+    title: "Full Stack MERN + Generative AI Instructor (Freelance) at Jadara Foundation – Wings By Digital",
+    desc: [
+      "May – Nov 2026 (6 months, On-site, Bouskoura – Casablanca, Presentiel): Formation Full Stack MERN + Generative AI.",
+      "Wings By Digital project by Jadara Foundation – presentiel bootcamp focused on hands-on projects & employability.",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/jadara.png",
   },
   
   
