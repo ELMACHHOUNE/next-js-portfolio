@@ -233,6 +233,11 @@ export const companies = [
     name: "MDSSUP",
     nameImg: "/mdssup.png",
   },
+    {
+    id: 20,
+    name: "Akkar Chark",
+    nameImg: "/akkar-chark.webp",
+  },
  
 
 ] as const;
