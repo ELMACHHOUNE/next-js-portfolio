@@ -9,10 +9,10 @@
 
   export const Experience = () => {
     return (
-      <section id="experience" className="py-20">
-        <h1 className="heading">
+      <section id="experience" className="py-20" aria-labelledby="experience-heading">
+        <h2 id="experience-heading" className="heading">
           My <span className="text-purple">work experience</span>
-        </h1>
+        </h2>
 
         <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">
           {workExperience.map((experience, index) => (
@@ -45,9 +45,9 @@
                 })()}
 
                 <div className="lg:ms-5">
-                  <h1 className="text-start text-xl font-bold md:text-2xl">
+                  <h3 className="text-start text-xl font-bold md:text-2xl">
                     {experience.title}
-                  </h1>
+                  </h3>
 
                   <div className="mt-3 text-start font-semibold text-white-100">
                     {Array.isArray(experience.desc) ? (

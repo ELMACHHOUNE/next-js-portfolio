@@ -19,8 +19,13 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { Sparkles } from "lucide-react";
-import { DottedMap } from "@/components/ui/dotted-map";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
+
+const DottedMap = dynamic(() => import("@/components/ui/dotted-map").then((m) => m.DottedMap), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 opacity-20 bg-grid-white/[0.03]" />,
+});
 
 const techStack = [
   { name: "React.js", icon: SiReact, color: "#61DAFB" },
@@ -87,16 +92,20 @@ export const BentoGridItem = ({
       )}
     >
       {(img || spareImg) && (
-        <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       )}
 
       {img && (
-        <div className="pointer-events-none absolute inset-0 h-full w-full">
+        <div className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
           <Image
             width={689}
             height={541}
             src={img}
-            alt="Image"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width:1024px) 33vw, 50vw"
             className={cn("object-cover object-center", imgClassName)}
           />
         </div>
@@ -108,12 +117,17 @@ export const BentoGridItem = ({
             "pointer-events-none absolute right-0 -mb-5",
             id === 5 && "w-full opacity-80"
           )}
+          aria-hidden="true"
         >
           <Image
             width={208}
             height={96}
             src={spareImg}
-            alt="Spare Image"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            sizes="208px"
             className="h-full w-full object-cover object-center"
           />
         </div>
@@ -122,17 +136,16 @@ export const BentoGridItem = ({
       {id === 2 && (
         <DottedMap
           markers={[
-            { lat: 33.5731, lng: -7.5898, size: 0.6, pulse: true },
-            { lat: 40.7128, lng: -74.006, size: 0.6, pulse: true },
-            { lat: 51.5074, lng: -0.1278, size: 0.6, pulse: true },
-            { lat: 35.6762, lng: 139.6503, size: 0.6, pulse: true },
-            { lat: -33.8688, lng: 151.2093, size: 0.6, pulse: true },
+            { lat: 33.5731, lng: -7.5898, size: 0.5, pulse: false },
+            { lat: 40.7128, lng: -74.006, size: 0.5, pulse: false },
+            { lat: 51.5074, lng: -0.1278, size: 0.5, pulse: false },
           ]}
+          mapSamples={3500}
           dotColor="rgba(203,172,249,0.3)"
           markerColor="#CBACF9"
-          dotRadius={0.2}
-          pulse
-          className="pointer-events-none absolute inset-0 z-0 opacity-70"
+          dotRadius={0.22}
+          pulse={false}
+          className="pointer-events-none absolute inset-0 z-0 opacity-60"
         />
       )}
 

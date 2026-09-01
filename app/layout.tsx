@@ -92,6 +92,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning className="dark" style={{ colorScheme: "dark" }}>
       <body className={inter.className} suppressHydrationWarning>
+        <a
+          href="#main-content"
+          className="sr-only left-4 top-4 z-[9999] rounded-full border border-white/20 bg-black px-4 py-2 text-sm text-white focus:not-sr-only focus:fixed focus:outline-none focus:ring-2 focus:ring-purple"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
           {children}
           <Analytics />

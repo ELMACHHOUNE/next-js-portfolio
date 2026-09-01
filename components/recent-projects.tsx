@@ -7,11 +7,11 @@ import { PinContainer } from "./ui/3d-pin";
 
 export const RecentProjects = () => {
   return (
-    <section id="projects" className="py-20">
-      <h1 className="heading">
+    <section id="projects" className="py-20" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
-      </h1>
+      </h2>
 
       <div className="mt-10 grid grid-cols-1 justify-items-center gap-x-16 gap-y-8 p-4 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map(({ id, des, iconLists, img, link, sourceCode, title }) => (
@@ -25,7 +25,8 @@ export const RecentProjects = () => {
                   <Image
                     fill
                     src="/bg.png"
-                    alt="bg-img"
+                    alt=""
+                    aria-hidden="true"
                     sizes="(min-width:1024px) 33vw, 100vw"
                     className="object-cover opacity-80"
                   />
@@ -40,9 +41,9 @@ export const RecentProjects = () => {
                 />
               </div>
 
-              <h1 className="line-clamp-1 text-base font-bold md:text-lg lg:text-xl">
+              <h3 className="line-clamp-1 text-base font-bold md:text-lg lg:text-xl">
                 {title}
-              </h1>
+              </h3>
 
               <p className="line-clamp-2 text-xs font-light lg:text-lg lg:font-normal">
                 {des}

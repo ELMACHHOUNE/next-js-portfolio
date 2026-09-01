@@ -29,13 +29,14 @@ export default function AchivementsPage() {
   };
 
   return (
-    <main className="relative mx-auto flex min-h-screen flex-col items-center justify-start overflow-clip bg-black-100 px-5 py-10 sm:px-10">
+    <main
+      id="main-content"
+      className="relative mx-auto flex min-h-screen flex-col items-center justify-start overflow-clip bg-black-100 px-5 py-10 sm:px-10"
+    >
       <FloatingNav navItems={navItems} />
       <div className="w-full py-20 max-w-7xl">
         <Achivements />
       </div>
-
-      <h1 className="sr-only">Achievements & Moments with Students — Mohamed EL MACHHOUNE — Awards Hackathons Teaching Morocco</h1>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />

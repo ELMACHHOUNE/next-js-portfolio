@@ -200,12 +200,16 @@ export function StudentsGallery() {
             <span className="hidden sm:inline">expert • instructor • mentor</span>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter moments by category">
             {categories.map((cat) => (
               <button
                 key={cat}
+                type="button"
+                role="tab"
+                aria-selected={active === cat}
+                aria-pressed={active === cat}
                 onClick={() => setActive(cat)}
-                className={`rounded-full border px-3.5 py-1.5 text-xs font-medium backdrop-blur-sm transition-all sm:text-sm ${
+                className={`rounded-full border px-3.5 py-1.5 text-xs font-medium backdrop-blur-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple sm:text-sm ${
                   active === cat
                     ? "border-purple/50 bg-purple text-white shadow-[0_0_20px_rgba(203,172,249,0.35)]"
                     : "border-white/[0.08] bg-white/[0.04] text-neutral-400 hover:border-white/15 hover:bg-white/[0.07] hover:text-white"
@@ -228,14 +232,15 @@ export function StudentsGallery() {
             href={card.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple/40 hover:bg-white/[0.05] hover:shadow-[0_20px_60px_-15px_rgba(203,172,249,0.35)]"
+            aria-label={`${card.title} — View on LinkedIn`}
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple/40 hover:bg-white/[0.05] hover:shadow-[0_20px_60px_-15px_rgba(203,172,249,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
           >
             {/* subtle grid overlay */}
-            <div className="pointer-events-none absolute inset-0 bg-grid-white/[0.02] [mask-image:linear-gradient(to_bottom,white_20%,transparent_90%)]" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-white/[0.02] [mask-image:linear-gradient(to_bottom,white_20%,transparent_90%)]" />
 
             {/* IDE chrome */}
             <div className="relative flex items-center justify-between border-b border-white/[0.06] bg-white/[0.02] px-4 py-3">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5" aria-hidden="true">
                 <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
                 <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
                 <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
@@ -255,26 +260,28 @@ export function StudentsGallery() {
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-black-100">
               <Image
                 src={card.src}
-                alt={card.title}
+                alt={`${card.title} — ${card.category}`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                loading="lazy"
+                decoding="async"
                 sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
               />
               {/* gradient + purple tint on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90" />
-              <div className="absolute inset-0 bg-purple/0 transition-colors duration-300 group-hover:bg-purple/[0.07]" />
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90" />
+              <div aria-hidden="true" className="absolute inset-0 bg-purple/0 transition-colors duration-300 group-hover:bg-purple/[0.07]" />
 
               {/* bottom title overlay — like IDE file tab */}
               <div className="absolute inset-x-0 bottom-0 p-4">
                 <div className="inline-flex max-w-full items-center gap-2 rounded-lg border border-white/10 bg-black/55 px-2.5 py-1.5 backdrop-blur-md">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple" />
+                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple" />
                   <span className="line-clamp-1 text-xs font-semibold leading-tight text-white">{card.title}</span>
                 </div>
               </div>
 
               {/* external arrow */}
-              <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-black/50 text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
-                <IconExternalLink className="h-4 w-4" />
+              <div aria-hidden="true" className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-black/50 text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
+                <IconExternalLink aria-hidden="true" className="h-4 w-4" />
               </div>
             </div>
 
@@ -286,10 +293,10 @@ export function StudentsGallery() {
 
               <div className="mt-4 flex items-center justify-between border-t border-white/[0.06] pt-4">
                 <span className="flex items-center gap-1.5 text-xs font-medium text-purple">
-                  <IconBrandLinkedin className="h-4 w-4" />
+                  <IconBrandLinkedin aria-hidden="true" className="h-4 w-4" />
                   View on LinkedIn
                 </span>
-                <span className="font-mono text-[10px] tracking-widest text-neutral-500 group-hover:text-neutral-300 transition-colors">
+                <span aria-hidden="true" className="font-mono text-[10px] tracking-widest text-neutral-500 group-hover:text-neutral-300 transition-colors">
                   0{String(idx + 1).padStart(2, "0")} — CODE
                 </span>
               </div>

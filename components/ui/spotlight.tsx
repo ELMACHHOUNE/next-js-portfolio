@@ -8,6 +8,8 @@ type SpotlightProps = {
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       className={cn(
         "pointer-events-none absolute z-[1] h-[169%]  w-[138%] animate-spotlight opacity-0 lg:w-[84%]",
         className

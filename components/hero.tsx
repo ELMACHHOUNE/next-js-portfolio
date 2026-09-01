@@ -23,7 +23,7 @@ export const Hero = () => {
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
-      <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.03]">
+      <div aria-hidden="true" className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.03]">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100" />
       </div>
 
@@ -47,9 +47,12 @@ export const Hero = () => {
                   <div className="rounded-full p-[3px] bg-gradient-to-tr from-[#CBACF9] to-white dark:to-[#000319] shadow-xl">
                     <Image
                       src="/elmachhoune.jpg"
-                      alt="Profile Photo"
+                      alt="Mohamed EL MACHHOUNE — Full-Stack Developer — Profile Photo"
                       width={192}
                       height={192}
+                      priority
+                      fetchPriority="high"
+                      sizes="(min-width: 1024px) 192px, (min-width: 768px) 160px, 128px"
                       className="h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 rounded-full ring-4 ring-white dark:ring-[#000319] object-cover"
                     />
                   </div>
@@ -58,14 +61,17 @@ export const Hero = () => {
             </div>
           </div>
 
-          <h2 className="max-w-80 text-center text-[10px] uppercase tracking-widest text-blue-100 sm:text-xs">
+          <p className="max-w-80 text-center text-[10px] uppercase tracking-widest text-blue-100 sm:text-xs">
             Building Innovative Solutions with Passion and Precision
-          </h2>
+          </p>
 
-          <TextGenerateEffect
-            className="text-center text-[30px] sm:text-[40px] md:text-5xl lg:text-6xl"
-            words="Software Engineer & Graphic Designer / Instructor / Consultant"
-          />
+          <h1 className="text-center text-[30px] font-bold sm:text-[40px] md:text-5xl lg:text-6xl">
+            <TextGenerateEffect
+              className="text-center"
+              words="Software Engineer & Graphic Designer / Instructor / Consultant"
+            />
+            <span className="sr-only">Mohamed EL MACHHOUNE — Full-Stack Developer MERN Next.js Instructor Morocco</span>
+          </h1>
 
           <p className="mb-4 text-center text-xs sm:text-sm md:text-lg md:tracking-wider lg:text-2xl">
             Hi, I&apos;m {links.ownerName}, a Full-Stack Developer & Creative Designer dedicated to delivering impactful digital experiences.

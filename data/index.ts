@@ -14,7 +14,7 @@ export const gridItems = [
     description: "About me",
     className:
       "lg:col-span-3 md:col-span-6 lg:row-span-2 lg:min-h-[55vh]",
-    imgClassName: "w-full h-full object-right",
+    imgClassName: "w-full h-full object-right opacity-90",
     titleClassName: "justify-end items-start",
     img: "/gotodev.svg",
     spareImg: "",
@@ -45,10 +45,10 @@ export const gridItems = [
     title: "Software Engineer • Graphic Designer • Instructor & Consultant • Auto-Entrepreneur",
     description: "The Inside Scoop",
     className: "lg:col-span-5 md:col-span-6 lg:min-h-[45vh]",
-    imgClassName: "absolute right-6 bottom-6 w-56 md:w-96",
+    imgClassName: "absolute right-6 bottom-6 w-56 md:w-96 opacity-80",
     titleClassName: "justify-end items-start",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
+    img: "/b5.webp",
+    spareImg: "",
   },
 ] as const;
 

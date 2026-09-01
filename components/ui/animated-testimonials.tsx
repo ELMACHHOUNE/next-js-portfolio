@@ -112,11 +112,12 @@ export const AnimatedTestimonials = ({
                   >
                     <Image
                       src={testimonial.src}
-                      alt={testimonial.name}
+                      alt={`${testimonial.name} — ${testimonial.designation}`}
                       fill
                       draggable={false}
                       loading="lazy"
                       decoding="async"
+                      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                       className="h-full w-full rounded-3xl object-cover object-center"
                     />
                   </motion.div>
@@ -142,8 +143,11 @@ export const AnimatedTestimonials = ({
                   }
                 }
               }}
-              className="absolute inset-0 z-50 cursor-grab active:cursor-grabbing touch-pan-y"
-              aria-label="Drag to switch testimonial"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label={`Testimonials carousel, item ${active + 1} of ${testimonials.length}: ${testimonials[active].name}`}
+              tabIndex={0}
+              className="absolute inset-0 z-50 cursor-grab active:cursor-grabbing touch-pan-y focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple rounded-3xl"
             />
           </div>
         </div>
@@ -201,16 +205,20 @@ export const AnimatedTestimonials = ({
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
+              type="button"
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              aria-label="Previous achievement"
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
             >
-              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+              <IconArrowLeft aria-hidden="true" className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
             </button>
             <button
+              type="button"
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              aria-label="Next achievement"
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
             >
-              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+              <IconArrowRight aria-hidden="true" className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
             </button>
           </div>
         </div>

@@ -2,16 +2,21 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
-import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { MagicButton } from "@/components/ui/magic-button";
+
+const CanvasRevealEffect = dynamic(
+  () => import("@/components/ui/canvas-reveal-effect").then((m) => m.CanvasRevealEffect),
+  { ssr: false, loading: () => <div className="absolute inset-0 bg-gradient-to-br from-purple/20 to-transparent" /> }
+);
 
 export const Approach = () => {
   return (
-    <section className="w-full py-20">
-      <h1 className="heading">
+    <section className="w-full py-20" aria-labelledby="expertise-heading">
+      <h2 id="expertise-heading" className="heading">
         My <span className="text-purple">expertise</span>
-      </h1>
+      </h2>
 
       <div className="my-20 flex flex-col items-center justify-center gap-4 lg:flex-row">
         <Card

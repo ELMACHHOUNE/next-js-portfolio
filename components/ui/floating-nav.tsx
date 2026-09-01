@@ -41,6 +41,7 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   return (
     <AnimatePresence mode="wait">
       <motion.nav
+        aria-label="Primary navigation"
         initial={{
           opacity: 1,
           y: -100,
@@ -61,8 +62,9 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
           <Link
             key={`link-${idx}`}
             href={navItem.link}
+            aria-label={`Go to ${navItem.name} section`}
             className={cn(
-              "relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300"
+              "relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple rounded-lg px-1"
             )}
           >
             <span className="!cursor-pointer text-sm">{navItem.name}</span>

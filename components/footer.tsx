@@ -9,10 +9,11 @@ import { socialMedia } from "@/data";
 export const Footer = () => {
   return (
     <footer id="contact" className="mb-[100px] w-full pb-10 md:mb-auto">
-      <div className="absolute -bottom-72 left-0 min-h-96 w-full">
+      <div className="absolute -bottom-72 left-0 min-h-96 w-full" aria-hidden="true">
         <Image
           src="/footer-grid.svg"
-          alt="grid"
+          alt=""
+          aria-hidden="true"
           className="h-full w-full opacity-50"
           width={1260}
           height={863}
@@ -20,10 +21,10 @@ export const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
+        <h2 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
           presence to the next level?
-        </h1>
+        </h2>
 
         <p className="my-5 text-center text-white-200 md:mt-10">
           Reach out to me today and let&apos;s discuss how I can help your
