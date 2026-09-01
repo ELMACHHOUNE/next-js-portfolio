@@ -50,26 +50,32 @@ export function Achivements() {
 
       <AnimatedTestimonials testimonials={testimonials} />
 
-      {/* Students section */}
-      <section className="mt-16">
-        <div className="flex items-center gap-4">
-          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-700/60" />
-          <h2 className="text-center text-3xl font-semibold text-white sm:text-4xl">
-            Moments with Students
-          </h2>
-          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-700/60" />
-        </div>
-        <div className="mt-2 mx-auto h-px w-28 bg-neutral-700/60 sm:hidden" />
-        <div className="mt-3 flex items-center gap-4">
-          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-800/50" />
-          <p className="text-center text-sm text-neutral-300 sm:text-base max-w-2xl mx-auto px-2">
-            Workshops, hackathons, and coaching snapshots.
-          </p>
-          <div aria-hidden className="hidden sm:block h-px flex-1 bg-neutral-800/50" />
-        </div>
-        <div className="mt-2 mx-auto h-px w-36 bg-neutral-800/50 sm:hidden" />
+      {/* Students section — Expert IT Dev restyle */}
+      <section className="relative mt-20 overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm">
+        {/* glow like Grid section */}
+        <div className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-purple/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 bottom-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="pointer-events-none absolute inset-0 bg-grid-white/[0.02] [mask-image:linear-gradient(to_bottom,white_10%,transparent_80%)]" />
 
-        <StudentsGallery />
+        <div className="relative px-6 py-10 sm:px-8 sm:py-12 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-purple animate-pulse" />
+              <span className="font-mono text-[10px] tracking-[0.18em] text-neutral-300">EXPERT • INSTRUCTOR • MENTOR</span>
+            </div>
+            <h2 className="heading !mb-3 text-3xl sm:text-4xl lg:text-5xl">
+              Moments <span className="text-purple">with Students</span>
+            </h2>
+            <p className="mx-auto max-w-2xl font-mono text-xs tracking-wide text-neutral-400 sm:text-sm">
+              <span className="text-purple/80">{"//"}</span> Workshops, hackathons & coaching — building Full-Stack, AI & career-ready talent
+            </p>
+            <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-purple/40 to-transparent" />
+          </div>
+
+          <div className="mt-8">
+            <StudentsGallery />
+          </div>
+        </div>
       </section>
     </div>
   );
