@@ -3,6 +3,13 @@ process.env.CSS_TRANSFORMER_WASM = "1";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    images: {
+      remotePatterns: [
+        { protocol: "https", hostname: "media.licdn.com" },
+        { protocol: "https", hostname: "images.unsplash.com" },
+        { protocol: "https", hostname: "assets.aceternity.com" },
+      ],
+    },
     // Disable strict TypeScript checks during build
     typescript: {
       ignoreBuildErrors: true,

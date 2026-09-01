@@ -12,6 +12,7 @@ export function Card({
     category: string;
     title: string;
     src: string;
+    href?: string;
     content?: React.ReactNode;
   };
   aspect?: "portrait" | "landscape";
@@ -19,27 +20,43 @@ export function Card({
   const mediaAspect =
     aspect === "landscape" ? "aspect-[16/9]" : "aspect-[3/4]"; // default was portrait 3/4
 
+  const Media = (
+    <div className={`relative w-full ${mediaAspect} overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/5`}>
+      <Image
+        src={card.src}
+        alt={card.title}
+        fill
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        draggable={false}
+        loading="lazy"
+        decoding="async"
+        sizes="(min-width:1024px) 720px, (min-width:640px) 520px, 90vw"
+      />
+      {/* bottom gradient + text overlay */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+        <div className="text-[10px] uppercase tracking-[0.12em] opacity-80">{card.category}</div>
+        <div className="text-base sm:text-lg font-semibold leading-tight line-clamp-2">{card.title}</div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="relative w-full group transition-transform duration-300 hover:-translate-y-1">
       {/* image/media wrapper - switch aspect by prop */}
-      <div className={`relative w-full ${mediaAspect} overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 dark:ring-white/5`}>
-        <Image
-          src={card.src}
-          alt={card.title}
-          fill
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          draggable={false}
-          loading="lazy"
-          decoding="async"
-          sizes="(min-width:1024px) 720px, (min-width:640px) 520px, 90vw"
-        />
-        {/* bottom gradient + text overlay */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-          <div className="text-[10px] uppercase tracking-[0.12em] opacity-80">{card.category}</div>
-          <div className="text-base sm:text-lg font-semibold leading-tight line-clamp-2">{card.title}</div>
-        </div>
-      </div>
+      {card.href ? (
+        <a
+          href={card.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${card.title} — View on LinkedIn`}
+          className="block"
+        >
+          {Media}
+        </a>
+      ) : (
+        Media
+      )}
 
       {/* optional external content below card */}
       {card.content && <div className="mt-4">{card.content}</div>}
