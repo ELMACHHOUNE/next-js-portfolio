@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Approach } from "@/components/approach";
 import { Clients } from "@/components/clients";
 import { Experience } from "@/components/experience";
@@ -6,7 +7,10 @@ import { Grid } from "@/components/grid";
 import { Hero } from "@/components/hero";
 import { FloatingNav } from "@/components/ui/floating-nav";
 import { RecentProjects } from "@/components/recent-projects";
+import { homeMetadata } from "@/config";
 import { navItems } from "@/data";
+
+export const metadata: Metadata = homeMetadata;
 
 const MainPage = () => {
   return (
@@ -22,6 +26,9 @@ const MainPage = () => {
         <Approach />
         <Footer />
       </div>
+
+      {/* SEO: hidden semantic H1 for crawlers (Hero uses TextGenerateEffect) */}
+      <h1 className="sr-only">Mohamed EL MACHHOUNE — Full-Stack Developer MERN Next.js Instructor Morocco</h1>
     </main>
   );
 };

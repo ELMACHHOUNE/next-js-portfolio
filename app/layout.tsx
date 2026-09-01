@@ -1,62 +1,106 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 
-import { siteConfig } from "@/config";
+import { siteConfig, siteUrl, links } from "@/config";
 
 import { ThemeProvider } from "./provider";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
+});
 
 export const viewport: Viewport = {
   themeColor: "#000319",
   colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
-export const metadata: Metadata = siteConfig;
+export const metadata: Metadata = {
+  ...siteConfig,
+  // Next.js will merge per-page metadata; keep base here
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: links.ownerName,
+    alternateName: ["ELMACHHOUNE", "Mohamed El Machhoune", "Elmachooune"],
+    url: siteUrl,
+    image: `${siteUrl}/elmachhoune.jpg`,
+    jobTitle: "Full-Stack Developer & IT Instructor",
+    description:
+      "Freelance Full-Stack Developer (MERN, Next.js, TypeScript) & IT Instructor — GMC School of Technology x Woolf, Jadara Foundation, ALX Morocco, GoMyCode.",
+    email: links.ownerEmail,
+    sameAs: [
+      links.github,
+      links.linkedin,
+      "https://elmachhoune.me",
+      "https://www.elmachhoune.me",
+      "https://gotodev.ma",
+    ],
+    knowsAbout: [
+      "Full-Stack Development",
+      "MERN Stack",
+      "Next.js",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "MongoDB",
+      "Teaching",
+      "Freelancing",
+    ],
+    worksFor: { "@type": "Organization", name: "GoToDev.ma (MR Technologies)" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Ibn Tofail University" },
+    address: { "@type": "PostalAddress", addressCountry: "MA", addressLocality: "Casablanca" },
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: `${links.ownerName} — Portfolio`,
+    url: siteUrl,
+    inLanguage: "en-US",
+    author: { "@type": "Person", name: links.ownerName },
+    description: siteConfig.description as string,
+    publisher: { "@type": "Person", name: links.ownerName },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Achievements", item: `${siteUrl}/achivements` },
+    ],
+  };
+
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className="dark"
-      style={{ colorScheme: "dark" }}
-    >
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/icon.png" />
-        <link rel="canonical" href="https://elmachhoune.me/" />
-        <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="qxvD8indgJ2C-TyDsWeAiiJSEX7fmf_Pw2C-4kcDGYQ" />
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "MOHAMED EL MACHHOUNE",
-              url: "https://elmachhoune.me/",
-              author: {
-                "@type": "Person",
-                name: "MOHAMED EL MACHHOUNE",
-                url: "https://github.com/ELMACHHOUNE/",
-              },
-              description:
-                "Mohamed EL MACHHOUNE's portfolio showcasing full-stack development, UX/UI design, and consulting expertise.",
-            }),
-          }}
-        ></script>
-      </head>
+    <html lang="en" suppressHydrationWarning className="dark" style={{ colorScheme: "dark" }}>
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
           {children}
           <Analytics />
         </ThemeProvider>
+
+        {/* Structured Data — no manual meta tags; Next handles viewport/canonical/robots via Metadata API */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       </body>
     </html>
   );
