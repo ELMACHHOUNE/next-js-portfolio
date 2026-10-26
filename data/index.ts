@@ -374,10 +374,15 @@ export const workExperience = [
     thumbnail: "/companies/actway.jpg",
     logos: ["/companies/actway.jpg", "/companies/onssa.png"],
   },
-  
-  
-  
-  
+  {
+    id: 12,
+    title: "Full Stack MERN Instructor (Freelance) at Najm Foundation – Najm Digital Academy",
+    desc: "Delivering MERN Stack training at Plateforme des Jeunes – INDH Moulay Rachid, Casablanca, supporting NEET youth through practical full-stack web development training.",
+    className: "md:col-span-2",
+    thumbnail: "/companies/najm-foundation.png",
+    logos: ["/companies/najm-foundation.png", "/companies/najm-digital-academy.png"],
+    partnerLogos: ["/companies/indh-mr.png", "/companies/eerchad.jpg"],
+  },
 ] as const;
 
 export const socialMedia = [

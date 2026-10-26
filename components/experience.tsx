@@ -25,45 +25,75 @@
               className="flex-1 border-neutral-200 text-white dark:border-slate-800"
               duration={durations[index]}
             >
-              <div className="flex flex-col gap-2 p-3 py-6 md:p-5 lg:flex-row lg:items-center lg:p-10">
+              <div className="flex w-full flex-col gap-4 p-3 py-6 md:p-5 lg:p-10">
                 {(() => {
                   const exp = experience as typeof experience & {
                     logos?: readonly string[];
+                    partnerLogos?: readonly string[];
                   };
                   const logos = exp.logos ?? [exp.thumbnail];
+                  const partnerLogos = exp.partnerLogos ?? [];
                   return (
-                    <div className="flex flex-col items-center gap-2 lg:gap-3 shrink-0">
-                      {logos.map((logo, i) => (
-                        <Image
-                          key={`${experience.id}-logo-${i}`}
-                          width={128}
-                          height={80}
-                          src={logo}
-                          alt={`${experience.title} logo ${i + 1}`}
-                          className="w-20 md:w-24 lg:w-28 h-auto object-contain"
-                        />
-                      ))}
-                    </div>
+                    <>
+                      <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
+                        <div className="flex shrink-0 flex-col items-center gap-2 lg:gap-3">
+                          {logos.map((logo, i) => (
+                            <Image
+                              key={`${experience.id}-logo-${i}`}
+                              width={128}
+                              height={80}
+                              src={logo}
+                              alt={`${experience.title} logo ${i + 1}`}
+                              className="h-auto w-20 object-contain md:w-24 lg:w-28"
+                            />
+                          ))}
+                        </div>
+
+                        <div className="lg:ms-5">
+                          <h3 className="text-start text-xl font-bold md:text-2xl">
+                            {experience.title}
+                          </h3>
+
+                          <div className="mt-3 text-start font-semibold text-white-100">
+                            {Array.isArray(experience.desc) ? (
+                              <ul className="list-disc space-y-2 ps-5">
+                                {experience.desc.map((point, index) => (
+                                  <li key={index}>{point}</li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p>{experience.desc}</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {partnerLogos.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-3 border-t border-slate-800/80 pt-3">
+                          <span className="text-[0.65rem] font-semibold uppercase tracking-widest text-white-100/60">
+                            In partnership with
+                          </span>
+                          <div className="flex items-center gap-2">
+                            {partnerLogos.map((logo, i) => (
+                              <span
+                                key={`${experience.id}-partner-${i}`}
+                                className="flex h-9 items-center justify-center rounded-lg bg-white/95 px-2"
+                              >
+                                <Image
+                                  width={96}
+                                  height={48}
+                                  src={logo}
+                                  alt={`${experience.title} partner logo ${i + 1}`}
+                                  className="h-6 w-auto max-w-[92px] object-contain md:h-7"
+                                />
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </>
                   );
                 })()}
-
-                <div className="lg:ms-5">
-                  <h3 className="text-start text-xl font-bold md:text-2xl">
-                    {experience.title}
-                  </h3>
-
-                  <div className="mt-3 text-start font-semibold text-white-100">
-                    {Array.isArray(experience.desc) ? (
-                      <ul className="list-disc ps-5 space-y-2">
-                        {experience.desc.map((point, index) => (
-                          <li key={index}>{point}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p>{experience.desc}</p>
-                    )}
-                  </div>
-                </div>
               </div>
             </Button>
           ))}
