@@ -183,9 +183,14 @@ export const companies = [
     nameImg: "/companies/gk.png",
   },
   {
+    id: 8,
+    name: "Najm",
+    nameImg: "/companies/najm-foundation.png",
+  },
+  {
     id: 9,
-    name: "vic",
-    nameImg: "/companies/vic.png",
+    name: "Najm Digital Academy",
+    nameImg: "/companies/najm-digital-academy.png",
   },
   {
     id: 10,
@@ -257,6 +262,7 @@ export const companies = [
     name: "ABAT",
     nameImg: "/companies/abat.svg",
   },
+
 
 ] as const;
 
