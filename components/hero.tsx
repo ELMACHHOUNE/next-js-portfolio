@@ -46,7 +46,7 @@ export const Hero = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="rounded-full p-[3px] bg-gradient-to-tr from-[#CBACF9] to-white dark:to-[#000319] shadow-xl">
                     <Image
-                      src="/elmachhoune.jpg"
+                      src="/profiles/elmachhoune.jpg"
                       alt="Mohamed EL MACHHOUNE — Full-Stack Developer — Profile Photo"
                       width={192}
                       height={192}

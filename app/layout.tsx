@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: links.ownerName,
     alternateName: ["ELMACHHOUNE", "Mohamed El Machhoune", "Elmachooune"],
     url: siteUrl,
-    image: `${siteUrl}/elmachhoune.jpg`,
+    image: `${siteUrl}/profiles/elmachhoune.jpg`,
     jobTitle: "Full-Stack Developer & IT Instructor",
     description:
       "Freelance Full-Stack Developer (MERN, Next.js, TypeScript) & IT Instructor — GMC School of Technology x Woolf, Jadara Foundation, ALX Morocco, GoMyCode.",

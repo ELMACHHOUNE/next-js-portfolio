@@ -65,9 +65,9 @@ export const siteConfig: Metadata = {
   generator: "Next.js",
   // Icons are also exported via app layout metadata, but keep for completeness
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/icon.png" }],
-    shortcut: "/icon.png",
+    icon: [{ url: "/profiles/icon.png", type: "image/png" }],
+    apple: [{ url: "/profiles/icon.png" }],
+    shortcut: "/profiles/icon.png",
   },
   // Viewport & theme handled in layout export, keep lightweight here
   verification: {
@@ -86,7 +86,7 @@ export const siteConfig: Metadata = {
     siteName: `${links.ownerName} — Portfolio`,
     images: [
       {
-        url: "/elmachhoune.jpg",
+        url: "/profiles/elmachhoune.jpg",
         width: 1200,
         height: 630,
         alt: "Mohamed EL MACHHOUNE — Full-Stack Developer & Instructor — Portfolio",
@@ -102,7 +102,7 @@ export const siteConfig: Metadata = {
     description: "Portfolio — Full-Stack (MERN/Next.js) • Instructor (GMC, Jadara, ALX) • Founder GoToDev.ma • Morocco",
     creator: "@ELMACHHOUNE",
     site: "@ELMACHHOUNE",
-    images: [`${siteUrl}/elmachhoune.jpg`],
+    images: [`${siteUrl}/profiles/elmachhoune.jpg`],
   },
   robots: {
     index: true,
@@ -143,7 +143,7 @@ export const homeMetadata: Metadata = {
     siteName: "Mohamed EL MACHHOUNE — Portfolio",
     images: [
       {
-        url: "/elmachhoune.jpg",
+        url: "/profiles/elmachhoune.jpg",
         width: 1200,
         height: 630,
         alt: "Mohamed EL MACHHOUNE — Full-Stack Developer — Portfolio Cover",
@@ -156,7 +156,7 @@ export const homeMetadata: Metadata = {
     card: "summary_large_image",
     title: "Mohamed EL MACHHOUNE — Full-Stack Developer | Morocco",
     description: "MERN/Next.js • Instructor • Founder GoToDev.ma • Casablanca/Rabat • Freelance & Consulting",
-    images: [`${siteUrl}/elmachhoune.jpg`],
+    images: [`${siteUrl}/profiles/elmachhoune.jpg`],
   },
 };
 

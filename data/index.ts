@@ -124,25 +124,25 @@ export const testimonials = [
     quote: `${links.ownerName}’s versatility is unparalleled. Whether it's crafting seamless user experiences, building robust applications, or pitching ideas to clients, he excels in every role. He inspires the team to push boundaries and achieve greatness.`,
     name: "Issam EL JAOUHARI",
     title: "Mobile & Full-stack Web Developer",
-    profileImg: "/issam.jpg",
+    profileImg: "/profiles/issam.jpg",
   },
   {
     quote: `${links.ownerName} is a powerhouse of skills—his expertise in Full Stack Development and UX/UI design sets him apart. His ability to manage projects with precision and deliver innovative solutions makes working with him a truly enriching experience.`,
     name: "Azeddine Ait TAAKAT",
     title: "ISTQB & Full-stack Web Developer",
-    profileImg: "/azeddine.jpg",
+    profileImg: "/profiles/azeddine.jpg",
   },
   {
     quote: `${links.ownerName}’s ability to seamlessly combine technical expertise, marketing strategies, and outstanding design is nothing short of remarkable. His charisma and vision inspire confidence, and he always finds innovative ways to bring value to both the team and our clients.`,
     name: "Reda EL MACHHOUNE",
     title: "Teacher of English & Digital Marketer",
-    profileImg: "/reda.jpg",
+    profileImg: "/profiles/reda.jpg",
   },
   {
     quote: `${links.ownerName} is the definition of a multi-talented professional. From designing intuitive interfaces to developing scalable systems, he does it all with exceptional skill and a keen eye for detail. His leadership and marketing acumen have significantly propelled GoToDev forward.`,
     name: "Oussama EZITOUNI",
     title: "Data Scientist & Software Engineer",
-    profileImg: "/oussama.png",
+    profileImg: "/profiles/oussama.png",
   },
 ] as const;
 
