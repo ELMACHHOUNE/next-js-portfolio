@@ -32,6 +32,12 @@ const baseKeywords = [
   "IT Instructor Morocco",
   "Software Engineer Morocco",
   "Freelance Software Engineer",
+  "AI Developer Morocco",
+  "Generative AI Engineer",
+  "AI Consultant Morocco",
+  "Multimedia Engineering",
+  "Digital Creativity",
+  "AI Training Morocco",
   "GoToDev",
   "GoToDev.ma",
   "MR Technologies",
@@ -48,11 +54,12 @@ const baseKeywords = [
 export const siteConfig: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Mohamed EL MACHHOUNE — Full-Stack Developer | MERN & Next.js | Instructor & Consultant",
+    default:
+      "Mohamed EL MACHHOUNE — Software Engineer | AI Dev & Generative AI | Multimedia Engineering & Digital Creativity | Instructor & Consultant",
     template: "%s | Mohamed EL MACHHOUNE",
   },
   description:
-    "Official portfolio of Mohamed EL MACHHOUNE — Freelance Full-Stack Developer (MERN, Next.js, Node.js, TypeScript) & IT Instructor in Morocco. Instructor at GMC School of Technology x Woolf, Jadara, ALX, GoMyCode & Technopark. Founder of GoToDev.ma.",
+    "Official portfolio of Mohamed EL MACHHOUNE — Software Engineer specialised in AI Development & Generative AI, Multimedia Engineering & Digital Creativity, and Instructor & Consultant in Morocco. Full-stack builder (Next.js, MERN, Node.js, TypeScript) — instructor at GMC School of Technology x Woolf, Jadara, ALX & GoMyCode, and founder of GoToDev.ma.",
   keywords: baseKeywords,
   authors: [{ name: links.ownerName, url: links.github }],
   creator: links.ownerName,
@@ -79,9 +86,9 @@ export const siteConfig: Metadata = {
     languages: { "en-US": siteUrl, "fr-MA": siteUrl },
   },
   openGraph: {
-    title: "Mohamed EL MACHHOUNE — Full-Stack Developer | MERN & Next.js",
+    title: "Mohamed EL MACHHOUNE — Software Engineer | AI Dev & Generative AI",
     description:
-      "Freelance Full-Stack Developer & IT Instructor (MERN, Next.js, Node.js, TypeScript) — GMC x Woolf, Jadara, ALX, GoMyCode. Explore projects, teaching & achievements.",
+      "Software Engineer, AI & Generative AI Developer, Multimedia Engineering & Digital Creativity — Instructor & Consultant. Next.js / MERN builder, founder of GoToDev.ma. Explore projects, experience & achievements.",
     url: siteUrl,
     siteName: `${links.ownerName} — Portfolio`,
     images: [
@@ -89,7 +96,7 @@ export const siteConfig: Metadata = {
         url: "/profiles/elmachhoune.jpg",
         width: 1200,
         height: 630,
-        alt: "Mohamed EL MACHHOUNE — Full-Stack Developer & Instructor — Portfolio",
+        alt: "Mohamed EL MACHHOUNE — Software Engineer, AI & Generative AI, Instructor & Consultant — Portfolio",
       },
     ],
     locale: "en_US",
@@ -98,8 +105,9 @@ export const siteConfig: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohamed EL MACHHOUNE — Full-Stack Developer | MERN & Next.js",
-    description: "Portfolio — Full-Stack (MERN/Next.js) • Instructor (GMC, Jadara, ALX) • Founder GoToDev.ma • Morocco",
+    title: "Mohamed EL MACHHOUNE — Software Engineer | AI Dev & Generative AI",
+    description:
+      "Software Engineer • AI Dev & Generative AI • Multimedia Engineering & Digital Creativity • Instructor & Consultant — Morocco",
     creator: "@ELMACHHOUNE",
     site: "@ELMACHHOUNE",
     images: [`${siteUrl}/profiles/elmachhoune.jpg`],
@@ -120,9 +128,10 @@ export const siteConfig: Metadata = {
 
 // ── Page-specific metadata ──
 export const homeMetadata: Metadata = {
-  title: "Mohamed EL MACHHOUNE — Full-Stack Developer | MERN, Next.js | Instructor & Consultant | Morocco",
+  title:
+    "Mohamed EL MACHHOUNE — Software Engineer | AI Dev & Generative AI | Multimedia Engineering & Digital Creativity | Instructor & Consultant",
   description:
-    "Mohamed EL MACHHOUNE — Freelance Full-Stack Developer (MERN Stack: MongoDB, Express, React, Node.js, Next.js, TypeScript) & IT Instructor in Morocco. Instructor at GMC School of Technology x Woolf (MSc), Jadara Foundation, ALX Morocco, GoMyCode & HoussniJob Innovation. Founder of GoToDev.ma (MR Technologies). Based in Casablanca/Rabat — available for freelance & consulting.",
+    "Mohamed EL MACHHOUNE — Software Engineer specialising in AI Development & Generative AI, Multimedia Engineering & Digital Creativity. Full-stack engineer (Next.js, MERN: MongoDB, Express, React, Node.js, TypeScript) and Instructor & Consultant in Morocco — GMC School of Technology x Woolf (MSc), Jadara Foundation, ALX Morocco, GoMyCode, HoussniJob Innovation & Actway Consulting. Founder of GoToDev.ma (MR Technologies). Based in Casablanca/Rabat — available for freelance, AI consulting & training.",
   keywords: [
     ...baseKeywords,
     "Full-Stack Developer Casablanca",
@@ -131,14 +140,17 @@ export const homeMetadata: Metadata = {
     "Next.js Portfolio Morocco",
     "MERN Instructor Morocco",
     "Web Development Instructor Morocco",
+    "AI Development Morocco",
+    "Generative AI Developer Casablanca",
+    "Multimedia Engineering Morocco",
     "MR Technologies Morocco",
     "Portfolio Mohamed El Machhoune",
   ],
   alternates: { canonical: siteUrl },
   openGraph: {
-    title: "Mohamed EL MACHHOUNE — Full-Stack Developer | MERN, Next.js | Morocco",
+    title: "Mohamed EL MACHHOUNE — Software Engineer | AI Dev & Generative AI | Morocco",
     description:
-      "Freelance Full-Stack Engineer (MERN/Next.js) & Instructor — GMC x Woolf, Jadara, ALX, GoMyCode. Founder GoToDev.ma. Explore projects, experience & contact.",
+      "Software Engineer (Next.js / MERN), AI & Generative AI Developer, Multimedia Engineering & Digital Creativity — Instructor & Consultant. Founder GoToDev.ma.",
     url: siteUrl,
     siteName: "Mohamed EL MACHHOUNE — Portfolio",
     images: [
@@ -146,7 +158,7 @@ export const homeMetadata: Metadata = {
         url: "/profiles/elmachhoune.jpg",
         width: 1200,
         height: 630,
-        alt: "Mohamed EL MACHHOUNE — Full-Stack Developer — Portfolio Cover",
+        alt: "Mohamed EL MACHHOUNE — Software Engineer, AI & Generative AI — Portfolio Cover",
       },
     ],
     locale: "en_US",
@@ -154,8 +166,9 @@ export const homeMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohamed EL MACHHOUNE — Full-Stack Developer | Morocco",
-    description: "MERN/Next.js • Instructor • Founder GoToDev.ma • Casablanca/Rabat • Freelance & Consulting",
+    title: "Mohamed EL MACHHOUNE — Software Engineer | AI Dev & Generative AI",
+    description:
+      "AI Dev & Generative AI • Multimedia Engineering & Digital Creativity • Instructor & Consultant • Founder GoToDev.ma",
     images: [`${siteUrl}/profiles/elmachhoune.jpg`],
   },
 };

@@ -37,9 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     alternateName: ["ELMACHHOUNE", "Mohamed El Machhoune", "Elmachooune"],
     url: siteUrl,
     image: `${siteUrl}/profiles/elmachhoune.jpg`,
-    jobTitle: "Full-Stack Developer & IT Instructor",
+    jobTitle: "Software Engineer | AI Dev & Generative AI | Multimedia Engineering & Digital Creativity | Instructor & Consultant",
     description:
-      "Freelance Full-Stack Developer (MERN, Next.js, TypeScript) & IT Instructor — GMC School of Technology x Woolf, Jadara Foundation, ALX Morocco, GoMyCode.",
+      "Software Engineer specialised in AI Development & Generative AI and Multimedia Engineering & Digital Creativity — Instructor & Consultant, full-stack builder (Next.js, MERN, TypeScript).",
     email: links.ownerEmail,
     sameAs: [
       links.github,
@@ -49,6 +49,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "https://gotodev.ma",
     ],
     knowsAbout: [
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Generative AI",
+      "LLM Applications",
+      "Prompt Engineering",
       "Full-Stack Development",
       "MERN Stack",
       "Next.js",
@@ -56,6 +61,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "Node.js",
       "TypeScript",
       "MongoDB",
+      "Multimedia Engineering",
+      "Digital Creativity",
       "Teaching",
       "Freelancing",
     ],

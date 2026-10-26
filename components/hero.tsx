@@ -28,7 +28,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 my-16 sm:my-20 flex justify-center">
-        <div className="flex max-w-[95vw] flex-col items-center justify-center sm:max-w-[89vw] md:max-w-2xl lg:max-w-[60vw]">
+        <div className="flex max-w-[95vw] flex-col items-center justify-center sm:max-w-[89vw] md:max-w-2xl lg:max-w-[95vw]">
           {/* Theme-styled "GitHub contributions" section */}
           <div className="relative mb-6 w-full flex justify-center">
             <div className="relative w-full rounded-2xl p-[2px] bg-gradient-to-r from-[#CBACF9] via-white/70 to-[#CBACF9] dark:via-[#000319] shadow-lg">
@@ -47,7 +47,7 @@ export const Hero = () => {
                   <div className="rounded-full p-[3px] bg-gradient-to-tr from-[#CBACF9] to-white dark:to-[#000319] shadow-xl">
                     <Image
                       src="/profiles/elmachhoune.jpg"
-                      alt="Mohamed EL MACHHOUNE — Full-Stack Developer — Profile Photo"
+                      alt="Mohamed EL MACHHOUNE — Software Engineer, AI & Generative AI — Profile Photo"
                       width={192}
                       height={192}
                       priority
@@ -61,20 +61,20 @@ export const Hero = () => {
             </div>
           </div>
 
-          <p className="max-w-80 text-center text-[10px] uppercase tracking-widest text-blue-100 sm:text-xs">
+          <p className="max-w-120 text-center text-[10px] uppercase tracking-widest text-blue-100 sm:text-xs">
             Building Innovative Solutions with Passion and Precision
           </p>
 
-          <h1 className="text-center text-[30px] font-bold sm:text-[40px] md:text-5xl lg:text-6xl">
+          <h1 className="text-center text-[30px] font-bold sm:text-[40px] md:text-3xl lg:text-3xl">
             <TextGenerateEffect
               className="text-center"
-              words="Software Engineer & Graphic Designer / Instructor / Consultant"
+              words="Software Engineer | AI Dev & Generative AI | Multimedia Engineering & Digital Creativity | Instructor & Consultant"
             />
-            <span className="sr-only">Mohamed EL MACHHOUNE — Full-Stack Developer MERN Next.js Instructor Morocco</span>
+            <span className="sr-only">Mohamed EL MACHHOUNE — Software Engineer, AI Development & Generative AI, Multimedia Engineering & Digital Creativity, Instructor & Consultant</span>
           </h1>
 
-          <p className="mb-4 text-center text-xs sm:text-sm md:text-lg md:tracking-wider lg:text-2xl">
-            Hi, I&apos;m {links.ownerName}, a Full-Stack Developer & Creative Designer dedicated to delivering impactful digital experiences.
+          <p className="mb-4 text-center text-xs sm:text-sm md:text-lg md:tracking-wider lg:text-xl">
+            Hi, I&apos;m {links.ownerName}, a Software Engineer building Generative AI products, multimedia-rich digital experiences and creative brands — as an Instructor &amp; Consultant.
           </p>
 
           <Link href="#about" className="mt-6 sm:mt-10">
