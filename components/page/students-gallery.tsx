@@ -14,6 +14,14 @@ type StudentCard = {
 
 const studentCards: StudentCard[] = [
   {
+    category: "Consulting",
+    title: "AI Training for ONSSA Staff — Actway Consulting",
+    src: "/achivements/onssa-actway.png",
+    href: "https://lnkd.in/p/ej6TdpT8",
+    description:
+      "Oct 20–21, 2026 — 2-day Artificial Intelligence training for the staff of ONSSA (National Office for Food Safety), Regional Directorate of Tangier–Tetouan–Al Hoceima. AI in public administration: practical tools, productivity & responsible adoption — as AI Trainer & Consultant with Actway Consulting.",
+  },
+  {
     category: "Students",
     title: "Graduation Demo Day — JADARA × Nouaceur Wings Tech × INDH — Full Stack MERN",
     src: "/achivements/indh-nouaceur-wings-tech.jpg",
@@ -178,7 +186,7 @@ const studentCards: StudentCard[] = [
   },
 ];
 
-const categories = ["All", "Students", "Workshop", "Hackathon", "Event"] as const;
+const categories = ["All", "Students", "Workshop", "Hackathon", "Event", "Consulting"] as const;
 
 export function StudentsGallery() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");

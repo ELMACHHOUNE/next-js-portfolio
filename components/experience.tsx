@@ -3,7 +3,10 @@
   import { Button } from "@/components/ui/moving-borders";
   import { workExperience } from "@/data";
 
-  const durations = workExperience.map(() =>
+  // `workExperience` is stored oldest → newest; display it newest → oldest.
+  const orderedExperience = [...workExperience].reverse();
+
+  const durations = orderedExperience.map(() =>
     Math.floor(Math.random() * 10000 + 10000)
   );
 
@@ -15,7 +18,7 @@
         </h2>
 
         <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">
-          {workExperience.map((experience, index) => (
+          {orderedExperience.map((experience, index) => (
             <Button
               key={experience.id}
               borderRadius="1.75rem"

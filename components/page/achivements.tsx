@@ -67,7 +67,7 @@ export function Achivements() {
               Moments <span className="text-purple">with Students</span>
             </h2>
             <p className="mx-auto max-w-2xl font-mono text-xs tracking-wide text-neutral-400 sm:text-sm">
-              <span aria-hidden="true" className="text-purple/80">{"//"}</span> Workshops, hackathons & coaching — building Full-Stack, AI & career-ready talent
+              <span aria-hidden="true" className="text-purple/80">{"//"}</span> Workshops, hackathons, corporate AI training & coaching — building Full-Stack, AI & career-ready talent
             </p>
             <div aria-hidden="true" className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-purple/40 to-transparent" />
           </div>

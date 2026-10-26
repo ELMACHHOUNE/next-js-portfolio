@@ -163,7 +163,7 @@ export const homeMetadata: Metadata = {
 export const achievementsMetadata: Metadata = {
   title: "Achievements & Moments with Students — Awards, Hackathons, Teaching | Mohamed EL MACHHOUNE",
   description:
-    "Achievements of Mohamed EL MACHHOUNE: Hack@UIT Winner (GoToDev & Syndinet), SMART REGION Winner (Green Thumb), Excellence Star (Ibn Tofail University) + 23+ Moments with Students — workshops, bootcamps & jury at ENSA Khouribga, GIZ, Orange Digital Centers, ALX, Jadara, Nouaceur Wings Tech & Management Digital School.",
+    "Achievements of Mohamed EL MACHHOUNE: Hack@UIT Winner (GoToDev & Syndinet), SMART REGION Winner (Green Thumb), Excellence Star (Ibn Tofail University) + 23+ Moments with Students & Professionals — workshops, bootcamps, jury & corporate AI training (ONSSA x Actway Consulting) at ENSA Khouribga, GIZ, Orange Digital Centers, ALX, Jadara, Nouaceur Wings Tech & Management Digital School.",
   keywords: [
     ...baseKeywords,
     "Achievements Mohamed EL MACHHOUNE",
@@ -177,13 +177,16 @@ export const achievementsMetadata: Metadata = {
     "ALX Morocco",
     "Jadara Foundation",
     "Ensa Khouribga Open Source Days Jury",
+    "ONSSA AI Training",
+    "Actway Consulting AI Trainer",
+    "AI Training Public Administration Morocco",
     "GoToDev Achievements",
   ],
   alternates: { canonical: `${siteUrl}/achivements` },
   openGraph: {
     title: "Achievements & Moments with Students | Mohamed EL MACHHOUNE",
     description:
-      "Awards: Hack@UIT, SMART REGION, Excellence Star (UIT) + teaching moments — GIZ, Orange, ALX, Jadara, ENSA Khouribga, Technopark & more.",
+      "Awards: Hack@UIT, SMART REGION, Excellence Star (UIT) + teaching & AI training moments — GIZ, Orange, ALX, Jadara, ENSA Khouribga, ONSSA x Actway, Technopark & more.",
     url: `${siteUrl}/achivements`,
     siteName: "Mohamed EL MACHHOUNE — Portfolio",
     images: [

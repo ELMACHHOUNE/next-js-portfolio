@@ -54,6 +54,15 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 7,
+    title: "ABAT Consulting Website",
+    des: "A full-stack corporate website for ABAT Consulting, a Rabat-based firm for consulting, professional training & coaching — bilingual FR/EN, services, programs and contact.",
+    img: "/abat-website.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/nodejs.svg"],
+    link: "https://abat-consulting.ma/",
+    sourceCode: "https://abat-consulting.ma/",
+  },
+  {
     id: 1,
     title: "Quiz-GoToDev Platform",
     des: "A quiz platform for university students to master Microeconomics and other topics.",
@@ -238,6 +247,21 @@ export const companies = [
     name: "Akkar Chark",
     nameImg: "/akkar-chark.webp",
   },
+  {
+    id: 21,
+    name: "ONSSA",
+    nameImg: "/onssa.png",
+  },
+  {
+    id: 22,
+    name: "Actway Consulting",
+    nameImg: "/actway.jpg",
+  },
+  {
+    id: 23,
+    name: "ABAT",
+    nameImg: "/abat.svg",
+  },
  
 
 ] as const;
@@ -338,6 +362,17 @@ export const workExperience = [
     ],
     className: "md:col-span-2",
     thumbnail: "/jadara.png",
+  },
+  {
+    id: 11,
+    title: "AI Trainer & Consultant (Freelance) at Actway Consulting – ONSSA",
+    desc: [
+      "Oct 20–21, 2026 (2 days, On-site, Tangier–Tetouan–Al Hoceima): Delivered an Artificial Intelligence training for the staff of ONSSA, the National Office for Food Safety, at its Regional Directorate.",
+      "Focus: AI in public administration — integrating practical AI tools into daily tasks, improving productivity & workflows, and adopting AI in a responsible way.",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/actway.jpg",
+    logos: ["/actway.jpg", "/onssa.png"],
   },
   
   

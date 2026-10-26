@@ -12,7 +12,7 @@ export default function AchivementsPage() {
     "@type": "CollectionPage",
     name: "Achievements & Moments with Students — Mohamed EL MACHHOUNE",
     description:
-      "Awards: Hack@UIT, SMART REGION, Excellence Star (Ibn Tofail University) + 23+ Moments with Students — workshops, bootcamps & jury across Morocco.",
+      "Awards: Hack@UIT, SMART REGION, Excellence Star (Ibn Tofail University) + 23+ Moments with Students & Professionals — workshops, bootcamps, jury & corporate AI training (ONSSA x Actway Consulting) across Morocco.",
     url: `${siteUrl}/achivements`,
     isPartOf: { "@type": "WebSite", name: "Mohamed EL MACHHOUNE — Portfolio", url: siteUrl },
     about: { "@type": "Person", name: "Mohamed EL MACHHOUNE" },
