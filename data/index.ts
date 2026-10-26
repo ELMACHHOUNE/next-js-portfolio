@@ -150,119 +150,113 @@ export const companies = [
   {
     id: 1,
     name: "mrtechnologies",
-    nameImg: "/mrtechnologies.webp",
+    nameImg: "/companies/mrtechnologies.webp",
   },
   {
     id: 2,
     name: "uit",
-    nameImg: "/uit.png",
+    nameImg: "/companies/uit.png",
   },
   {
     id: 3,
     name: "paylik",
-    nameImg: "/paylik.webp",
+    nameImg: "/companies/paylik.webp",
   },
   {
     id: 4,
     name: "gotodev",
-    nameImg: "/gotodev2.png",
+    nameImg: "/companies/gotodev2.png",
   },
   {
     id: 5,
     name: "ecoimpact",
-    nameImg: "/ecoimpact.svg",
+    nameImg: "/companies/ecoimpact.svg",
   },
   {
     id: 6,
     name: "quiz",
-    nameImg: "/quiz.png",
+    nameImg: "/companies/quiz.png",
   },
   {
     id: 7,
     name: "gk",
-    nameImg: "/gk.png",
-  },
-  {
-    id: 8,
-    name: "touzar",
-    nameImg: "/touzar.webp",
+    nameImg: "/companies/gk.png",
   },
   {
     id: 9,
     name: "vic",
-    nameImg: "/vic.png",
+    nameImg: "/companies/vic.png",
   },
   {
     id: 10,
     name: "houssnijob",
-    nameImg: "/houssnijob.png",
+    nameImg: "/companies/houssnijob.png",
   },
   {
     id: 11,
     name: "GMC school of technology",
-    nameImg: "/gmc.png",
+    nameImg: "/companies/gmc.png",
   },
   {
     id: 19,
     name: "Woolf",
-    nameImg: "/woolf.jpg",
+    nameImg: "/companies/woolf.jpg",
   },
   {
     id: 12,
     name: "Jadara",
-    nameImg: "/jadara.png",
+    nameImg: "/companies/jadara.png",
   },
   {
     id: 18,
     name: "GON Wings Tech",
-    nameImg: "/gon-wings-tech.png",
+    nameImg: "/companies/gon-wings-tech.png",
   },
   {
     id: 17,
     name: "Nouaceur Wings Tech",
-    nameImg: "/nouaceur-wings-tech.png",
+    nameImg: "/companies/nouaceur-wings-tech.png",
   },
   {
     id: 13,
     name: "GoMyCode",
-    nameImg: "/gmc.jpg",
+    nameImg: "/companies/gmc.jpg",
   },
   {
     id: 14,
     name: "Aksam assurance",
-    nameImg: "/aksam.png",
+    nameImg: "/companies/aksam.png",
   },
   {
     id: 15,
     name: "nlivrilik",
-    nameImg: "/nlivrilik.png",
+    nameImg: "/companies/nlivrilik.png",
   },
   {
     id: 16,
     name: "MDSSUP",
-    nameImg: "/mdssup.png",
+    nameImg: "/companies/mdssup.png",
   },
     {
     id: 20,
     name: "Akkar Chark",
-    nameImg: "/akkar-chark.webp",
+    nameImg: "/companies/akkar-chark.webp",
   },
   {
     id: 21,
     name: "ONSSA",
-    nameImg: "/onssa.png",
+    nameImg: "/companies/onssa.png",
   },
   {
     id: 22,
     name: "Actway Consulting",
-    nameImg: "/actway.jpg",
+    nameImg: "/companies/actway.jpg",
   },
   {
     id: 23,
     name: "ABAT",
-    nameImg: "/abat.svg",
+    nameImg: "/companies/abat.svg",
   },
- 
 
 ] as const;
 
@@ -272,21 +266,21 @@ export const workExperience = [
     title: "Full-stack Developer at IR4LAB (Anapec Contract)",
     desc: "Contributed to innovative projects as a Full-stack Developer at IR4LAB from August 2023 to November 2023, leveraging modern technologies in a hybrid work setup to deliver impactful solutions.",
     className: "md:col-span-2",
-    thumbnail: "/IR4LAB.png",
+    thumbnail: "/companies/IR4LAB.png",
   },
   {
     id: 2,
     title: "UX/UI & Graphic Design instructor at GoMyCode (Freelance)",
     desc: "Thrilled to join GoMyCode as a part-time instructor, teaching Graphic Design & UX/UI Design since July 2023.",
-    className: "md:col-span-2", 
-    thumbnail: "/gmc.jpg",
+    className: "md:col-span-2",
+    thumbnail: "/companies/gmc.jpg",
   },
   {
     id: 3,
     title: "Full Stack Web instructor at GoMyCode (Freelance)",
     desc: "Thrilled to join GoMyCode as a part-time Web Development instructor, teaching the MERN Stack since August 2023.",
     className: "md:col-span-2",
-    thumbnail: "/gmc.jpg",
+    thumbnail: "/companies/gmc.jpg",
   },
   {
     id: 4,
@@ -297,7 +291,7 @@ export const workExperience = [
       "May 5–26, 2025 (4 days): Provided MERN Stack instruction to students from OMNIA School, focusing on practical frontend and backend development skills.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/houssnijob.png",
+    thumbnail: "/companies/houssnijob.png",
   },
   {
     id: 5,
@@ -307,8 +301,8 @@ export const workExperience = [
       "Woolf is a Malta-based, MFHEA-licensed higher-education institution in the European Higher Education Area (collegiate model); program MFHEA Level 7 – 90 ECTS, internationally recognized.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/gmc.png",
-    logos: ["/gmc.png", "/woolf.jpg"],
+    thumbnail: "/companies/gmc.png",
+    logos: ["/companies/gmc.png", "/companies/woolf.jpg"],
   },
   
   {
@@ -319,8 +313,8 @@ export const workExperience = [
       "Delivered remote Full Stack Web Development training (frontend & backend) via the ALX platform for NEET youth in Guelmim-Oued Noun.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/jadara.png",
-    logos: ["/jadara.png", "/gon-wings-tech.png"],
+    thumbnail: "/companies/jadara.png",
+    logos: ["/companies/jadara.png", "/companies/gon-wings-tech.png"],
   },
   {
     id: 7,
@@ -330,7 +324,7 @@ export const workExperience = [
       "Guided students in workflow automation using n8n and API integrations.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/houssnijob.png",
+    thumbnail: "/companies/houssnijob.png",
   },
   {
     id: 9,
@@ -340,8 +334,8 @@ export const workExperience = [
       "Nouaceur Wings Tech project by Jadara Foundation – presentiel training focused on hands-on projects & employability.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/jadara.png",
-    logos: ["/jadara.png", "/nouaceur-wings-tech.png"],
+    thumbnail: "/companies/jadara.png",
+    logos: ["/companies/jadara.png", "/companies/nouaceur-wings-tech.png"],
   },
   {
     id: 8,
@@ -351,7 +345,7 @@ export const workExperience = [
       "MDSSUP — accredited private institution where innovation comes to life; hands-on, project-based & employability-focused programs.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/mdssup.png",
+    thumbnail: "/companies/mdssup.png",
   },
   {
     id: 10,
@@ -361,7 +355,7 @@ export const workExperience = [
       "Wings By Digital project by Jadara Foundation – presentiel bootcamp focused on hands-on projects & employability.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/jadara.png",
+    thumbnail: "/companies/jadara.png",
   },
   {
     id: 11,
@@ -371,8 +365,8 @@ export const workExperience = [
       "Focus: AI in public administration — integrating practical AI tools into daily tasks, improving productivity & workflows, and adopting AI in a responsible way.",
     ],
     className: "md:col-span-2",
-    thumbnail: "/actway.jpg",
-    logos: ["/actway.jpg", "/onssa.png"],
+    thumbnail: "/companies/actway.jpg",
+    logos: ["/companies/actway.jpg", "/companies/onssa.png"],
   },
   
   
